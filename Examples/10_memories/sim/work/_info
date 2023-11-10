@@ -1,0 +1,149 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/admin/OneDrive - FH Vorarlberg/Dokumente/Semester 5/HDL/systemVerilog/Examples/10_memories/sim
+vaddr_cnt
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 !s110 1699616747
+!i10b 1
+!s100 9;CNBXoV5?Ez;nRKDLinV0
+ITEfF3>[YOfg]YKKg8n9QG0
+S1
+R1
+w1699615987
+8../src/addr_cnt.sv
+F../src/addr_cnt.sv
+!i122 36
+L0 3 17
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2021.2;73
+r1
+!s85 0
+31
+Z6 !s108 1699616747.000000
+Z7 !s107 ../src/prescaler.sv|../src/addr_cnt.sv|
+Z8 !s90 -reportprogress|300|-work|work|../src/addr_cnt.sv|../src/prescaler.sv|
+!i113 0
+Z9 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z10 tCvgOpt 0
+vprescaler
+R2
+R3
+!i10b 1
+!s100 kheRa7oBQ6GYBWW=mddzZ2
+I3z@1H7GEo?<DJ<<M1nIGZ3
+S1
+R1
+w1699616601
+8../src/prescaler.sv
+F../src/prescaler.sv
+!i122 36
+L0 1 43
+R4
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R10
+vrom_10bit_256
+R3
+!i10b 1
+!s100 VoK7?]:03nO0fl3IJ@Y]n0
+IU:5oeNLmc3ljLJdQDc?=m3
+R1
+w1699609393
+8../ip/rom_10bit_256.v
+F../ip/rom_10bit_256.v
+!i122 35
+L0 40 61
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 ../ip/rom_10bit_256.v|
+!s90 -reportprogress|300|-work|work|../ip/rom_10bit_256.v|
+!i113 0
+R9
+R10
+vtb
+R2
+R3
+!i10b 1
+!s100 ^AzaoD^dzb]Bgk>F`RSi=0
+Ib9JPUofVC8hgR;Rm]d7GJ2
+S1
+R1
+w1699616740
+8tb.sv
+Ftb.sv
+!i122 37
+L0 5 70
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 tb.sv|
+!s90 -reportprogress|300|-work|work|tb.sv|
+!i113 0
+R9
+R10
+Ttb_opt_disabled
+!s110 1699616748
+VDVI6SDS:2mHfB[a?2EYR33
+04 2 4 work tb fast 0
+!s124 OEM10U5 
+o+acc -O0 -L altera_mf_ver
+R10
+ntb_opt_disabled
+OL;O;2021.2;73
+vtoplevel_c5g_hex4_uart
+R2
+R3
+!i10b 1
+!s100 8bnn`I2XfDRFP3D`;OE672
+IgmSd_a<jKclhzQK;f?2X83
+S1
+R1
+w1699616480
+8../fpga/toplevel_c5g_hex4_uart.sv
+F../fpga/toplevel_c5g_hex4_uart.sv
+!i122 34
+L0 8 79
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 ../fpga/toplevel_c5g_hex4_uart.sv|
+!s90 -reportprogress|300|-work|work|../fpga/toplevel_c5g_hex4_uart.sv|
+!i113 0
+R9
+R10

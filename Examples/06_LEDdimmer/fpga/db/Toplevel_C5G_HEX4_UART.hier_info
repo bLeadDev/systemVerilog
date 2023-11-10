@@ -1,0 +1,176 @@
+|toplevel_c5g_hex4_uart
+CLOCK_125_p => ~NO_FANOUT~
+CLOCK_50_B5B => clk.IN3
+CLOCK_50_B6A => ~NO_FANOUT~
+CLOCK_50_B7A => ~NO_FANOUT~
+CLOCK_50_B8A => ~NO_FANOUT~
+LEDG[0] <= <GND>
+LEDG[1] <= <GND>
+LEDG[2] <= <GND>
+LEDG[3] <= <GND>
+LEDG[4] <= <GND>
+LEDG[5] <= <GND>
+LEDG[6] <= <GND>
+LEDG[7] <= <GND>
+LEDR[0] <= <GND>
+LEDR[1] <= <GND>
+LEDR[2] <= <GND>
+LEDR[3] <= <GND>
+LEDR[4] <= <GND>
+LEDR[5] <= <GND>
+LEDR[6] <= <GND>
+LEDR[7] <= <GND>
+LEDR[8] <= <GND>
+LEDR[9] <= <GND>
+CPU_RESET_n => rst_n.IN3
+KEY[0] => key0.IN1
+KEY[1] => key1.IN1
+KEY[2] => ~NO_FANOUT~
+KEY[3] => ~NO_FANOUT~
+SW[0] => ~NO_FANOUT~
+SW[1] => ~NO_FANOUT~
+SW[2] => ~NO_FANOUT~
+SW[3] => ~NO_FANOUT~
+SW[4] => ~NO_FANOUT~
+SW[5] => ~NO_FANOUT~
+SW[6] => ~NO_FANOUT~
+SW[7] => ~NO_FANOUT~
+SW[8] => ~NO_FANOUT~
+SW[9] => ~NO_FANOUT~
+HEX0[0] <= sevenseg:sevenseg_u0.hexn_o
+HEX0[1] <= sevenseg:sevenseg_u0.hexn_o
+HEX0[2] <= sevenseg:sevenseg_u0.hexn_o
+HEX0[3] <= sevenseg:sevenseg_u0.hexn_o
+HEX0[4] <= sevenseg:sevenseg_u0.hexn_o
+HEX0[5] <= sevenseg:sevenseg_u0.hexn_o
+HEX0[6] <= sevenseg:sevenseg_u0.hexn_o
+HEX1[0] <= sevenseg:sevenseg_u1.hexn_o
+HEX1[1] <= sevenseg:sevenseg_u1.hexn_o
+HEX1[2] <= sevenseg:sevenseg_u1.hexn_o
+HEX1[3] <= sevenseg:sevenseg_u1.hexn_o
+HEX1[4] <= sevenseg:sevenseg_u1.hexn_o
+HEX1[5] <= sevenseg:sevenseg_u1.hexn_o
+HEX1[6] <= sevenseg:sevenseg_u1.hexn_o
+HEX2[0] <= <VCC>
+HEX2[1] <= <VCC>
+HEX2[2] <= <VCC>
+HEX2[3] <= <VCC>
+HEX2[4] <= <VCC>
+HEX2[5] <= <VCC>
+HEX2[6] <= <VCC>
+HEX3[0] <= <VCC>
+HEX3[1] <= <VCC>
+HEX3[2] <= <VCC>
+HEX3[3] <= <VCC>
+HEX3[4] <= <VCC>
+HEX3[5] <= <VCC>
+HEX3[6] <= <VCC>
+UART_RX => ~NO_FANOUT~
+UART_TX <= <GND>
+
+
+|toplevel_c5g_hex4_uart|edge_det:edge_det_u0
+rst_n => button_ff.ACLR
+clk => button_ff.CLK
+button => rise.IN1
+button => button_ff.DATAIN
+button => fall.IN1
+fall <= fall.DB_MAX_OUTPUT_PORT_TYPE
+rise <= rise.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|toplevel_c5g_hex4_uart|edge_det:edge_det_u1
+rst_n => button_ff.ACLR
+clk => button_ff.CLK
+button => rise.IN1
+button => button_ff.DATAIN
+button => fall.IN1
+fall <= fall.DB_MAX_OUTPUT_PORT_TYPE
+rise <= rise.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|toplevel_c5g_hex4_uart|updncnt:updncnt_u0
+rst_n => cnt[0]~reg0.ACLR
+rst_n => cnt[1]~reg0.ACLR
+rst_n => cnt[2]~reg0.ACLR
+rst_n => cnt[3]~reg0.ACLR
+rst_n => cnt[4]~reg0.ACLR
+rst_n => cnt[5]~reg0.ACLR
+rst_n => cnt[6]~reg0.ACLR
+rst_n => cnt[7]~reg0.ACLR
+clk => cnt[0]~reg0.CLK
+clk => cnt[1]~reg0.CLK
+clk => cnt[2]~reg0.CLK
+clk => cnt[3]~reg0.CLK
+clk => cnt[4]~reg0.CLK
+clk => cnt[5]~reg0.CLK
+clk => cnt[6]~reg0.CLK
+clk => cnt[7]~reg0.CLK
+inc => cnt.OUTPUTSELECT
+inc => cnt.OUTPUTSELECT
+inc => cnt.OUTPUTSELECT
+inc => cnt.OUTPUTSELECT
+inc => cnt.OUTPUTSELECT
+inc => cnt.OUTPUTSELECT
+inc => cnt.OUTPUTSELECT
+inc => cnt.OUTPUTSELECT
+dec => cnt.OUTPUTSELECT
+dec => cnt.OUTPUTSELECT
+dec => cnt.OUTPUTSELECT
+dec => cnt.OUTPUTSELECT
+dec => cnt.OUTPUTSELECT
+dec => cnt.OUTPUTSELECT
+dec => cnt.OUTPUTSELECT
+dec => cnt.OUTPUTSELECT
+cnt[0] <= cnt[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cnt[1] <= cnt[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cnt[2] <= cnt[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cnt[3] <= cnt[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cnt[4] <= cnt[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cnt[5] <= cnt[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cnt[6] <= cnt[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cnt[7] <= cnt[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|toplevel_c5g_hex4_uart|sevenseg:sevenseg_u0
+bin_i[0] => Decoder0.IN3
+bin_i[1] => Decoder0.IN2
+bin_i[2] => Decoder0.IN1
+bin_i[3] => Decoder0.IN0
+hex_o[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+hex_o[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+hex_o[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+hex_o[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+hex_o[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+hex_o[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+hex_o[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+hexn_o[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+hexn_o[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+hexn_o[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+hexn_o[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+hexn_o[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+hexn_o[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+hexn_o[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|toplevel_c5g_hex4_uart|sevenseg:sevenseg_u1
+bin_i[0] => Decoder0.IN3
+bin_i[1] => Decoder0.IN2
+bin_i[2] => Decoder0.IN1
+bin_i[3] => Decoder0.IN0
+hex_o[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+hex_o[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+hex_o[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+hex_o[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+hex_o[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+hex_o[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+hex_o[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+hexn_o[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+hexn_o[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+hexn_o[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+hexn_o[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+hexn_o[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+hexn_o[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+hexn_o[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

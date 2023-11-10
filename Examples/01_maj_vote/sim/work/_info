@@ -1,0 +1,71 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/mge9869/OneDrive - FH Vorarlberg/Dokumente/Semester 5/HDL/01_maj_vote/sim
+T_opt
+!s110 1696496114
+V4gnciW>_a5n0M=QImf;]11
+04 11 4 work tb_maj_vote fast 0
+=1-e073e73492eb-651e79f1-1d2-361c
+!s124 OEM10U2 
+o-quiet -auto_acc_if_foreign -work work +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2021.2;73
+vmaj_vote
+Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+!s110 1696496111
+!i10b 1
+!s100 gB3KSz=RKX_92k@TVOl?G3
+IMHIE250=aac@LLDEU^O9O1
+S1
+R1
+w1696494766
+8../src/maj_vote.sv
+F../src/maj_vote.sv
+!i122 5
+L0 8 44
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2021.2;73
+r1
+!s85 0
+31
+Z6 !s108 1696496111.000000
+!s107 ../src/maj_vote.sv|
+!s90 -reportprogress|300|-work|work|../src/maj_vote.sv|
+!i113 0
+Z7 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vtb_maj_vote
+R3
+!s110 1696496112
+!i10b 1
+!s100 joOROJVz@9Wi]UA;PX=L33
+I6AQkMjnfgLZPDC5L;Vfj43
+S1
+R1
+w1696496107
+8tb_maj_vote.sv
+Ftb_maj_vote.sv
+!i122 6
+L0 8 50
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 tb_maj_vote.sv|
+!s90 -reportprogress|300|-work|work|tb_maj_vote.sv|
+!i113 0
+R7
+R2

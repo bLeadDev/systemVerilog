@@ -1,0 +1,85 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/admin/OneDrive - FH Vorarlberg/Dokumente/Semester 5/HDL/Examples/09_CPU_assignment/hack/sim
+T_opt
+!s110 1699373597
+V92?z@2<>^R9OST835DbLZ0
+04 14 4 work tb_instr_demux fast 0
+=1-e86a64b1ff49-654a621c-29f-2bf4
+!s124 OEM10U2 
+o-quiet -auto_acc_if_foreign -work work +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2021.2;73
+vinstr_demux
+Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+!s110 1699373593
+!i10b 1
+!s100 T]@M3c^ZPE_i8XF3XKfol2
+Ioaa[DYAYJ<E<Mmf0NUV@?0
+S1
+R1
+w1699367897
+8../src/instr_demux.sv
+F../src/instr_demux.sv
+!i122 38
+L0 9 65
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2021.2;73
+r1
+!s85 0
+31
+Z6 !s108 1699373593.000000
+!s107 ../src/instr_demux.sv|
+!s90 -reportprogress|300|-work|work|../src/instr_demux.sv|
+!i113 0
+Z7 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vtb_instr_demux
+R3
+!s110 1699373594
+!i10b 1
+!s100 _XQQ<EjT4SZ^kPVzgnoJP2
+I_Z5=G48ilCdg;m^92BjRI3
+S1
+R1
+w1699373583
+8tb_instr_demux.sv
+Ftb_instr_demux.sv
+!i122 39
+L0 9 148
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 tb_instr_demux.sv|
+!s90 -reportprogress|300|-work|work|tb_instr_demux.sv|
+!i113 0
+R7
+R2

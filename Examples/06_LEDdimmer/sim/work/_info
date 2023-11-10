@@ -1,0 +1,135 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/admin/OneDrive - FH Vorarlberg/Dokumente/Semester 5/HDL/Examples/06_LEDdimmer/sim
+T_opt
+!s110 1697792789
+V3em[jEEnk?cVQoKG?DC:33
+04 11 4 work tb_edge_det fast 0
+=1-e86a64b1ff49-65324314-2ae-235c
+!s124 OEM10U2 
+Z2 o-quiet -auto_acc_if_foreign -work work +acc
+Z3 tCvgOpt 0
+n@_opt
+Z4 OL;O;2021.2;73
+R1
+T_opt1
+!s110 1697796126
+Vf;NahaJ24b:^;]YfGLBdl2
+04 10 4 work tb_updncnt fast 0
+=1-e86a64b1ff49-6532501e-3e-30ec
+!s124 OEM10U4 
+R2
+R3
+n@_opt1
+R4
+vedge_det
+Z5 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z6 !s110 1697796123
+!i10b 1
+!s100 ZzUF1HK44DLH1CVM6CkJV1
+IVZPJo:]PQF=E:G2P_WJ^53
+S1
+R1
+w1697793043
+8../src/edge_det.sv
+F../src/edge_det.sv
+!i122 17
+L0 9 26
+Z7 VDg1SIo80bB@j0V0VzS_@n1
+Z8 OL;L;2021.2;73
+r1
+!s85 0
+31
+Z9 !s108 1697796123.000000
+!s107 ../src/edge_det.sv|
+!s90 -reportprogress|300|-work|work|../src/edge_det.sv|
+!i113 0
+Z10 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+vtb_edge_det
+R5
+!s110 1697792786
+!i10b 1
+!s100 @NT]1loDSVPG]oDSZ:f>H2
+I?^S@HV_S1Mi<^^0nUT9I?2
+S1
+R1
+w1697792784
+8tb_edge_det.sv
+Ftb_edge_det.sv
+!i122 5
+L0 10 65
+R7
+R8
+r1
+!s85 0
+31
+!s108 1697792786.000000
+!s107 tb_edge_det.sv|
+!s90 -reportprogress|300|-work|work|tb_edge_det.sv|
+!i113 0
+R10
+R3
+vtb_updncnt
+R5
+R6
+!i10b 1
+!s100 _fO`7AE@lz<H2<Ym;zFMn0
+I@9zaPkNHB[NoMc^>OP^nS0
+S1
+R1
+w1697796107
+8tb_updncnt.sv
+Ftb_updncnt.sv
+!i122 19
+L0 10 83
+R7
+R8
+r1
+!s85 0
+31
+R9
+!s107 tb_updncnt.sv|
+!s90 -reportprogress|300|-work|work|tb_updncnt.sv|
+!i113 0
+R10
+R3
+vupdncnt
+R5
+R6
+!i10b 1
+!s100 9^5X[>1SkkBC5f5>bPB;21
+I7^;W^YS?kMkE7T0@?Hi4N2
+S1
+R1
+w1697794713
+8../src/updncnt.sv
+F../src/updncnt.sv
+!i122 18
+L0 9 24
+R7
+R8
+r1
+!s85 0
+31
+R9
+!s107 ../src/updncnt.sv|
+!s90 -reportprogress|300|-work|work|../src/updncnt.sv|
+!i113 0
+R10
+R3

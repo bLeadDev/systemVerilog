@@ -1,0 +1,20 @@
+Fitter Status : Successful - Fri Nov 10 12:50:10 2023
+Quartus Prime Version : 22.1std.2 Build 922 07/20/2023 SC Lite Edition
+Revision Name : Toplevel_C5G_HEX4_UART
+Top-level Entity Name : toplevel_c5g_hex4_uart
+Family : Cyclone V
+Device : 5CGXFC5C6F27C7
+Timing Models : Final
+Logic utilization (in ALMs) : 122 / 29,080 ( < 1 % )
+Total registers : 170
+Total pins : 69 / 364 ( 19 % )
+Total virtual pins : 0
+Total block memory bits : 2,560 / 4,567,040 ( < 1 % )
+Total RAM Blocks : 1 / 446 ( < 1 % )
+Total DSP Blocks : 0 / 150 ( 0 % )
+Total HSSI RX PCSs : 0 / 6 ( 0 % )
+Total HSSI PMA RX Deserializers : 0 / 6 ( 0 % )
+Total HSSI TX PCSs : 0 / 6 ( 0 % )
+Total HSSI PMA TX Serializers : 0 / 6 ( 0 % )
+Total PLLs : 0 / 12 ( 0 % )
+Total DLLs : 0 / 4 ( 0 % )

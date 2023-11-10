@@ -1,0 +1,118 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/admin/OneDrive - FH Vorarlberg/Dokumente/Semester 5/HDL/Examples/02_7_seg_disp/sevenseg/sim
+T_opt4
+!s110 1697040990
+VzTHSNDY`ji<01oOHlTYDQ3
+04 11 4 work tb_sevenseg fast 0
+=1-e86a64b1ff49-6526ca5d-3c5-2db4
+!s124 OEM10U2 
+o-quiet -auto_acc_if_foreign -work work +acc
+Z1 tCvgOpt 0
+n@_opt4
+OL;O;2021.2;73
+vsevenseg
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 !s110 1697040988
+!i10b 1
+!s100 8=R`_>FWbFdQ=ZjCN9O0j3
+IU39]2HAF:4hiJ`dTCSz1U1
+S1
+Z4 dC:/Users/admin/OneDrive - FH Vorarlberg/Dokumente/Semester 5/HDL/Assignments/01_seveseg/HDLFiles/02_7_seg_disp/sevenseg/sim
+w1697040937
+8../src/sevenseg_opt.sv
+F../src/sevenseg_opt.sv
+!i122 61
+L0 8 21
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2021.2;73
+r1
+!s85 0
+31
+Z7 !s108 1697040988.000000
+!s107 ../src/sevenseg_opt.sv|
+!s90 -reportprogress|300|-work|work|../src/sevenseg_opt.sv|
+!i113 0
+Z8 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+vtb_sevenseg
+R2
+DXx4 work 19 tb_sevenseg_sv_unit 0 22 E:3_;nJI5EO0kco?jM>4F0
+R3
+R5
+r1
+!s85 0
+!i10b 1
+!s100 ]K<k[S=[WM`QR<73G^lOJ1
+I3ZVi0DI8X@4TTmL1`o;bD1
+!s105 tb_sevenseg_sv_unit
+S1
+R4
+Z9 w1696534323
+Z10 8tb_sevenseg.sv
+Z11 Ftb_sevenseg.sv
+!i122 62
+L0 17 21
+R6
+31
+R7
+Z12 !s107 tb_sevenseg.sv|
+Z13 !s90 -reportprogress|300|-work|work|tb_sevenseg.sv|
+!i113 0
+R8
+R1
+Xtb_sevenseg_sv_unit
+R2
+R3
+VE:3_;nJI5EO0kco?jM>4F0
+r1
+!s85 0
+!i10b 1
+!s100 ]iZY@@]D45YIjU[>8XIM12
+IE:3_;nJI5EO0kco?jM>4F0
+!i103 1
+S1
+R4
+R9
+R10
+R11
+!i122 62
+L0 8 0
+R6
+31
+R7
+R12
+R13
+!i113 0
+R8
+R1
