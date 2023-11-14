@@ -17,6 +17,20 @@ R0
 R0
 R0
 R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
 !s11f vlog 2021.2 2021.04, Apr 14 2021
 13
 !s112 1.1
@@ -28,58 +42,248 @@ Z1 dC:/Users/admin/OneDrive - FH Vorarlberg/Dokumente/Semester 5/HDL/Examples/09
 T_opt
 !s110 1699373597
 V92?z@2<>^R9OST835DbLZ0
-04 14 4 work tb_instr_demux fast 0
+Z2 04 14 4 work tb_instr_demux fast 0
 =1-e86a64b1ff49-654a621c-29f-2bf4
-!s124 OEM10U2 
-o-quiet -auto_acc_if_foreign -work work +acc
-Z2 tCvgOpt 0
+Z3 !s124 OEM10U2 
+Z4 o-quiet -auto_acc_if_foreign -work work +acc
+Z5 tCvgOpt 0
 n@_opt
-OL;O;2021.2;73
+Z6 OL;O;2021.2;73
+R1
+T_opt1
+!s110 1699971073
+V2<gQ4c7WPdHL0`MHimSO71
+04 6 4 work tb_cpu fast 0
+=1-e86a64b1ff49-65538001-1c8-1408
+!s124 OEM10U8 
+R4
+R5
+n@_opt1
+R6
+T_opt2
+!s110 1699970377
+V?B6PUPY[z^bT8D=4H0ZDg0
+R2
+=1-e86a64b1ff49-65537d49-1d6-34fc
+R3
+R4
+R5
+n@_opt2
+R6
+R1
+valu
+Z7 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z8 !s110 1699971070
+!i10b 1
+!s100 @`4eg89DHUCQaZ^LcLo931
+IYhkX6B8A6i^BLSUkmhj8R3
+S1
+Z9 dC:/Users/admin/OneDrive - FH Vorarlberg/Dokumente/Semester 5/HDL/systemVerilog/Examples/09_CPU_assignment/hack/sim
+w1697474035
+8../src/alu.sv
+F../src/alu.sv
+!i122 76
+L0 9 73
+Z10 VDg1SIo80bB@j0V0VzS_@n1
+Z11 OL;L;2021.2;73
+r1
+!s85 0
+31
+Z12 !s108 1699971070.000000
+Z13 !s107 ../src/ram16k_verilog.sv|../src/pcount.sv|../src/jmp_ctrl.sv|../src/instr_demux.sv|../src/dreg.sv|../src/cpu.sv|../src/alu.sv|
+Z14 !s90 -reportprogress|300|-work|work|../src/alu.sv|../src/cpu.sv|../src/dreg.sv|../src/instr_demux.sv|../src/jmp_ctrl.sv|../src/pcount.sv|../src/ram16k_verilog.sv|
+!i113 0
+Z15 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R5
+vcpu
+R7
+R8
+!i10b 1
+!s100 _neFBa]KV4kMca8A7HaTn2
+I@::Z:dOC[S58_6RVXlS_Z3
+S1
+R9
+w1699970328
+8../src/cpu.sv
+F../src/cpu.sv
+!i122 76
+L0 9 162
+R10
+R11
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 0
+R15
+R5
+vdreg
+R7
+R8
+!i10b 1
+!s100 WfE[Ql^OWXJ1af[4lAA3;2
+Il9DjNN8VnOfA`fhidh_@[3
+S1
+R9
+w1698946014
+8../src/dreg.sv
+F../src/dreg.sv
+!i122 76
+L0 9 26
+R10
+R11
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 0
+R15
+R5
 vinstr_demux
-Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-!s110 1699373593
+R7
+R8
 !i10b 1
 !s100 T]@M3c^ZPE_i8XF3XKfol2
 Ioaa[DYAYJ<E<Mmf0NUV@?0
 S1
-R1
+R9
 w1699367897
 8../src/instr_demux.sv
 F../src/instr_demux.sv
-!i122 38
+!i122 76
 L0 9 65
-Z4 VDg1SIo80bB@j0V0VzS_@n1
-Z5 OL;L;2021.2;73
+R10
+R11
 r1
 !s85 0
 31
-Z6 !s108 1699373593.000000
-!s107 ../src/instr_demux.sv|
-!s90 -reportprogress|300|-work|work|../src/instr_demux.sv|
+R12
+R13
+R14
 !i113 0
-Z7 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R2
+R15
+R5
+vjmp_ctrl
+R7
+R8
+!i10b 1
+!s100 >Zi3@VZYWUEcZ[h[XMY_d0
+IZmz`D4H3JgCJlkQ^omcmU0
+S1
+R9
+w1699374708
+8../src/jmp_ctrl.sv
+F../src/jmp_ctrl.sv
+!i122 76
+L0 9 71
+R10
+R11
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 0
+R15
+R5
+vpcount
+R7
+R8
+!i10b 1
+!s100 9n^YjSfY2LmfNCQ?IETMP2
+IP7f>RQ]U[[d[Q;V5=B;lG1
+S1
+R9
+w1698946006
+8../src/pcount.sv
+F../src/pcount.sv
+!i122 76
+L0 9 29
+R10
+R11
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 0
+R15
+R5
+vram16k_verilog
+R7
+R8
+!i10b 1
+!s100 4S4UkhBKnO5l0gnU8Q>8i0
+IO046XcBhD;?Nf30z;R1GW3
+S1
+R9
+w1698694621
+8../src/ram16k_verilog.sv
+F../src/ram16k_verilog.sv
+!i122 76
+L0 9 22
+R10
+R11
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 0
+R15
+R5
+vtb_cpu
+R7
+R8
+!i10b 1
+!s100 9X_OL?F<B^9EnAcR4RA`P2
+I]0nzMMgaziklBC8QGa_Ed3
+S1
+R9
+w1699971065
+8tb_cpu.sv
+Ftb_cpu.sv
+!i122 77
+L0 9 132
+R10
+R11
+r1
+!s85 0
+31
+R12
+!s107 tb_cpu.sv|
+!s90 -reportprogress|300|-work|work|tb_cpu.sv|
+!i113 0
+R15
+R5
 vtb_instr_demux
-R3
-!s110 1699373594
+R7
+!s110 1699970433
 !i10b 1
 !s100 _XQQ<EjT4SZ^kPVzgnoJP2
 I_Z5=G48ilCdg;m^92BjRI3
 S1
-R1
-w1699373583
+R9
+w1699373665
 8tb_instr_demux.sv
 Ftb_instr_demux.sv
-!i122 39
+!i122 69
 L0 9 148
-R4
-R5
+R10
+R11
 r1
 !s85 0
 31
-R6
+!s108 1699970433.000000
 !s107 tb_instr_demux.sv|
 !s90 -reportprogress|300|-work|work|tb_instr_demux.sv|
 !i113 0
-R7
-R2
+R15
+R5

@@ -8,7 +8,7 @@ vsim -voptargs=+acc     work.tb_instr_demux
 
 log -r *
 
-do wave.do
+do instr_demux_wave.do
 
 run -all
 

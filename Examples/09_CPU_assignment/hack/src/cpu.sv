@@ -30,7 +30,7 @@ module cpu#(
 // From instruction demuxer
 logic                           instr_type;
 logic       [DW-1 : 0]          instr_v;
-logic                           cmd_a,;
+logic                           cmd_a;
 logic                           cmd_c1;
 logic                           cmd_c2;
 logic                           cmd_c3;
@@ -38,15 +38,15 @@ logic                           cmd_c4;
 logic                           cmd_c5;
 logic                           cmd_c6;
 logic                           cmd_d1;
-logic                           m_load;
-logic                           d_load;
+logic                           mload;
+logic                           dload;
 logic                           cmd_j1;
 logic                           cmd_j2;
 logic                           cmd_j3;
 //pcount
 logic                           pc_load;
 logic                           pc_inc;
-logic                           a_load;
+logic                           aload;
 //a-d-reg
 logic       [DW-1 : 0]          a;
 logic       [DW-1 : 0]          d;
@@ -60,7 +60,7 @@ logic                           alu_ng;
 
 
 /* INSTANTIATE AND INTERCONNECT ALL MODULES*/
-alu #(.W(16)) alu (
+alu #(.W(16)) alu_u1 (
     //inputs
     .x(d),
     .y(y),
@@ -76,9 +76,9 @@ alu #(.W(16)) alu (
     .ng(alu_ng)
 ); 
 
-dreg #(.W(16)) a (
+dreg #(.W(16)) a_u1 (
     //inputs
-    .rst_n(rst_n)
+    .rst_n(rst_n),
     .clk50m(clk50m),
     .en(en25m),
     .load(aload),
@@ -87,31 +87,31 @@ dreg #(.W(16)) a (
     .q(a)
 );
 
-dreg #(.W(16)) d (
+dreg #(.W(16)) d_u1 (
     //inputs
-    .rst_n(rst_n)
+    .rst_n(rst_n),
     .clk50m(clk50m),
     .en(en25m),
-    .load(d_load),
+    .load(dload),
     .d(alu_out),
     //outputs
     .q(d)
 );
 
-pcount #(.W(15)) pcount(
+pcount #(.W(15)) pcount_u1(
     //inputs
     .rst_n(rst_n),
     .clk50m(clk50m),
     .en(en25m),
     .load(pc_load),
-    .inc(pc_inc)
-    .cnt_in(a),
+    .inc(pc_inc),
+    .cnt_in(a[PW-1:0]),
     //outputs
     .cnt(pc)
 );
 
 //no width defined here; standard is used
-instr_demux instr_demux(
+instr_demux instr_demux_u1(
     //inputs
     .instr(instr),
     //outputs
@@ -125,14 +125,14 @@ instr_demux instr_demux(
     .cmd_c5(cmd_c5),
     .cmd_c6(cmd_c6),
     .cmd_d1(cmd_d1),
-    .cmd_d2(d_load),
-    .cmd_d3(m_load),
+    .cmd_d2(dload),
+    .cmd_d3(mload),
     .cmd_j1(cmd_j1),
     .cmd_j2(cmd_j2),
     .cmd_j3(cmd_j3)
 );
 
-jmp_ctrl jmp_ctrl(
+jmp_ctrl jmp_ctrl_u1(
     //inputs
     .j1(cmd_j1),
     .j2(cmd_j2),
@@ -144,6 +144,8 @@ jmp_ctrl jmp_ctrl(
     .pc_inc(pc_inc)
 );
 
+
+assign outM         = alu_out;
 always_comb begin
     if (instr_type == 1'b1) begin
         aload       = cmd_d1;
