@@ -7,9 +7,9 @@
 //----------------------------------------------------------
 
 module cpu#(
-    parameter DW = 16,               //data width
-    parameter AW = 15,               //address width
-    parameter PW = 15                //program counter width
+    parameter DW = 16,               // data width
+    parameter AW = 15,               // address width
+    parameter PW = 15                // program counter width
 )
 (
     // IO ports
@@ -26,7 +26,7 @@ module cpu#(
 );
 
 /* DEFINING WIRES */
-// IO ports
+// Used most of the outputs defined in the module name. Module name is comment.  
 // From instruction demuxer
 logic                           instr_type;
 logic       [DW-1 : 0]          instr_v;
@@ -43,29 +43,29 @@ logic                           dload;  //name changed
 logic                           cmd_j1;
 logic                           cmd_j2;
 logic                           cmd_j3;
-//pcount
+// pcount
 logic                           aload;
-//a reg
+// a reg
 logic       [DW-1 : 0]          a;
 logic       [DW-1 : 0]          ad;
-//d reg
+// d reg
 logic       [DW-1 : 0]          d;
-//alu
+// alu
 logic       [DW-1 : 0]          y;
 logic       [DW-1 : 0]          alu_out;
 logic                           alu_zr;
 logic                           alu_ng;
-//jmp ctrl
+// jmp ctrl
 logic                           pc_load;
 logic                           pc_inc;
-//misc
+// misc
 logic       [DW-1 : 0]          m;
 
 
 
 /* INSTANTIATE AND INTERCONNECT ALL MODULES*/
 alu #(.W(16)) alu_u1 (
-    //inputs
+    // inputs
     .x(d),
     .y(y),
     .zx(cmd_c1),
@@ -74,51 +74,51 @@ alu #(.W(16)) alu_u1 (
     .ny(cmd_c4),
     .f(cmd_c5),
     .no(cmd_c6),
-    //outputs
+    // outputs
     .out(alu_out),
     .zr(alu_zr),
     .ng(alu_ng)
 ); 
 
 dreg #(.W(16)) a_u1 (
-    //inputs
+    // inputs
     .rst_n(rst_n),
     .clk50m(clk50m),
     .en(en25m),
     .load(aload),
     .d(ad),
-    //outputs
+    // outputs
     .q(a)
 );
 
 dreg #(.W(16)) d_u1 (
-    //inputs
+    // inputs
     .rst_n(rst_n),
     .clk50m(clk50m),
     .en(en25m),
     .load(dload),
     .d(alu_out),
-    //outputs
+    // outputs
     .q(d)
 );
 
 pcount #(.W(15)) pcount_u1(
-    //inputs
+    // inputs
     .rst_n(rst_n),
     .clk50m(clk50m),
     .en(en25m),
     .load(pc_load),
     .inc(pc_inc),
     .cnt_in(a[PW-1:0]),
-    //outputs
+    // outputs
     .cnt(pc)
 );
 
-//no width defined here; standard is used
+// no width defined here; standard is used
 instr_demux instr_demux_u1(
-    //inputs
+    // inputs
     .instr(instr),
-    //outputs
+    // outputs
     .instr_type(instr_type),
     .instr_v(instr_v),
     .cmd_a(cmd_a),
@@ -137,13 +137,13 @@ instr_demux instr_demux_u1(
 );
 
 jmp_ctrl jmp_ctrl_u1(
-    //inputs
+    // inputs
     .j1(cmd_j1),
     .j2(cmd_j2),
     .j3(cmd_j3),
     .neg(alu_ng),
     .zero(alu_zr),
-    //outputs
+    // outputs
     .pc_load(pc_load),
     .pc_inc(pc_inc)
 );
@@ -154,22 +154,9 @@ assign addressM     = a;
 assign writeM       = mload;
 // Input assignments
 assign m            = inM;
+// Muxer in CPU
+assign aload        = (instr_type   == 1'b1) ? cmd_d1   : 1'b1;
+assign ad           = (instr_type   == 1'b1) ? alu_out  : instr_v;
+assign y            = (cmd_a        == 1'b1) ? m        : a;
 
-always_comb begin
-    if (instr_type == 1'b1) begin
-        aload       = cmd_d1;
-        ad          = alu_out;
-    end
-    else begin 
-        aload       = 1'b1;
-        ad          = instr_v;
-    end
-
-    if (cmd_a == 1'b1) begin
-        y = m;
-    end
-    else begin
-        y = a;
-    end
-end
 endmodule
