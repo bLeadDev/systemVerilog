@@ -38,25 +38,29 @@ logic                           cmd_c4;
 logic                           cmd_c5;
 logic                           cmd_c6;
 logic                           cmd_d1;
-logic                           mload;
-logic                           dload;
+logic                           mload;  //name changed
+logic                           dload;  //name changed
 logic                           cmd_j1;
 logic                           cmd_j2;
 logic                           cmd_j3;
 //pcount
-logic                           pc_load;
-logic                           pc_inc;
 logic                           aload;
-//a-d-reg
+//a reg
 logic       [DW-1 : 0]          a;
-logic       [DW-1 : 0]          d;
-logic       [DW-1 : 0]          m;
 logic       [DW-1 : 0]          ad;
-logic       [DW-1 : 0]          alu_out;
+//d reg
+logic       [DW-1 : 0]          d;
 //alu
 logic       [DW-1 : 0]          y;
+logic       [DW-1 : 0]          alu_out;
 logic                           alu_zr;
 logic                           alu_ng;
+//jmp ctrl
+logic                           pc_load;
+logic                           pc_inc;
+//misc
+logic       [DW-1 : 0]          m;
+
 
 
 /* INSTANTIATE AND INTERCONNECT ALL MODULES*/
@@ -144,8 +148,13 @@ jmp_ctrl jmp_ctrl_u1(
     .pc_inc(pc_inc)
 );
 
-
+// Output assignments
 assign outM         = alu_out;
+assign addressM     = a;
+assign writeM       = mload;
+// Input assignments
+assign m            = inM;
+
 always_comb begin
     if (instr_type == 1'b1) begin
         aload       = cmd_d1;
@@ -163,8 +172,4 @@ always_comb begin
         y = a;
     end
 end
-
-
-
-
 endmodule

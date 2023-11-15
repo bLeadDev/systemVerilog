@@ -48,23 +48,6 @@ module tb_cpu();
     int run_sim = 1;
 
     initial begin
-        clk50m = '0;
-        while (run_sim) begin
-            clk50m = ~clk50m;
-            #10ns;
-        end
-    end
-
-    initial begin
-        en25m = '0;
-        while (run_sim) begin
-            en25m = ~en25m;
-            #20ns;
-        end
-    end
-
-    initial begin
-
         rst_n = 1'b1;
         instr = '0;
         inM = '0;
@@ -77,14 +60,14 @@ module tb_cpu();
         #40ns;
         rst_n = 1'b1;
         #40ns;
-/* TEST BLOCK OK 14.11.2023 */
+
+/* TEST BLOCK */
         action = "LOAD_MAX_VAL_TO_A";
-        @(negedge clk50m);
+        @(negedge en25m);
         $display(action);
         instr = LOAD_MAX_VAL_TO_A;
         @(negedge en25m);
-        @(negedge en25m);
-        if (dut.a_u1.q  == MAX_VAL_OF_A) begin
+        if (dut.a_u1.q  == MAX_VAL_OF_A && writeM == 1'b0) begin
             pass_cnt++;
         end else begin
             err_cnt++;
@@ -92,40 +75,76 @@ module tb_cpu();
         end
         @(negedge en25m);
 /* BLOCK END*/
+/* TEST BLOCK */
         action = "LOAD_ZERO_TO_A";
-        @(negedge clk50m);
+        @(negedge en25m);
         $display(action);
         instr = LOAD_ZERO_TO_A;
-        @(negedge clk50m);
-        @(negedge clk50m);
-
+        @(negedge en25m);
+        if (dut.a_u1.q  == '0 && writeM == 1'b0) begin
+            pass_cnt++;
+        end else begin
+            err_cnt++;
+            $error(action);
+        end
+        @(negedge en25m);
+/* BLOCK END*/
+/* TEST BLOCK */
         action = "LOAD_42_TO_A";
-        @(negedge clk50m);
+        @(negedge en25m);
         $display(action);
         instr = LOAD_42_TO_A;
-        @(negedge clk50m);
-        @(negedge clk50m);
-
+        @(negedge en25m);
+        if (dut.a_u1.q  == 16'd42 && writeM == 1'b0) begin
+            pass_cnt++;
+        end else begin
+            err_cnt++;
+            $error(action);
+        end
+        @(negedge en25m);
+/* BLOCK END*/
+/* TEST BLOCK */
         action = "SET_D_TO_ONE";
-        @(negedge clk50m);
+        @(negedge en25m);
         $display(action);
         instr = SET_D_TO_ONE;
-        @(negedge clk50m);
-        @(negedge clk50m);
-
+        @(negedge en25m);
+        if (dut.d_u1.q  == 16'd1 && writeM == 1'b0) begin
+            pass_cnt++;
+        end else begin
+            err_cnt++;
+            $error(action);
+        end
+        @(negedge en25m);
+/* BLOCK END*/
+/* TEST BLOCK */
         action = "ADD_D_A_STORE_IN_D";
-        @(negedge clk50m);
+        @(negedge en25m);
         $display(action);
         instr = ADD_D_A_STORE_IN_D;
-        @(negedge clk50m);
-        @(negedge clk50m);
-
+        @(negedge en25m);
+        if (dut.d_u1.q  == 16'd43 && writeM == 1'b0) begin
+            pass_cnt++;
+        end else begin
+            err_cnt++;
+            $error(action);
+        end
+        @(negedge en25m);
+/* BLOCK END*/
+/* TEST BLOCK */
         action = "INC_A_STORE_IN_M";
-        @(negedge clk50m);
+        @(negedge en25m);
         $display(action);
         instr = INC_A_STORE_IN_M;
-        @(negedge clk50m);
-        @(negedge clk50m);
+        @(negedge en25m);
+        if (dut.outM  == 16'd43 && writeM == 1'b1) begin
+            pass_cnt++;
+        end else begin
+            err_cnt++;
+            $error(action);
+        end
+        @(negedge en25m);
+/* BLOCK END*/
 
         if(err_cnt > 0) begin
             $display("Passed %0d/%0d tests.", pass_cnt, pass_cnt + err_cnt);
@@ -136,5 +155,22 @@ module tb_cpu();
         $display("tb_cpu finished.");
         run_sim = 0;
     end
+// Clock generation
+    initial begin
+        clk50m = 1'b0;
+        while (run_sim) begin
+            clk50m = ~clk50m;
+            #10ns;
+        end
+    end
+
+    initial begin
+        en25m = 1'b0;
+        while (run_sim) begin
+            en25m = ~en25m;
+            #20ns;
+        end
+    end
+
 
 endmodule
