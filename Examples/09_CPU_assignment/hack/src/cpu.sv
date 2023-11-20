@@ -3,7 +3,7 @@
 // Purpose: Wiring for the CPU with all modules
 // Author: Michael Geuze
 // Version: v0
-// Date: 07.11.2023
+// Date: 13.11.2023
 //----------------------------------------------------------
 
 module cpu#(
@@ -26,8 +26,12 @@ module cpu#(
 );
 
 /* DEFINING WIRES */
-// Used most of the outputs defined in the module name. Module name is comment.  
-// From instruction demuxer
+// Used most of the outputs defined in the module name. Module name is in comment. 
+// ! Watch out !
+// There could be signal names missing when the wire gets connected to altering named ports.
+// Some signals also do get renamed. Read carefully.  
+
+// Instruction Demuxer
 logic                           instr_type;
 logic       [DW-1 : 0]          instr_v;
 logic                           cmd_a;
@@ -43,22 +47,22 @@ logic                           dload;  //name changed
 logic                           cmd_j1;
 logic                           cmd_j2;
 logic                           cmd_j3;
-// pcount
+// PCount
 logic                           aload;
-// a reg
+// A Reg
 logic       [DW-1 : 0]          a;
 logic       [DW-1 : 0]          ad;
-// d reg
+// D Reg
 logic       [DW-1 : 0]          d;
-// alu
+// ALU
 logic       [DW-1 : 0]          y;
 logic       [DW-1 : 0]          alu_out;
 logic                           alu_zr;
 logic                           alu_ng;
-// jmp ctrl
+// JMP Ctrl
 logic                           pc_load;
 logic                           pc_inc;
-// misc
+// Misc
 logic       [DW-1 : 0]          m;
 
 
@@ -148,13 +152,15 @@ jmp_ctrl jmp_ctrl_u1(
     .pc_inc(pc_inc)
 );
 
-// Output assignments
-assign outM         = alu_out;
-assign addressM     = a;
-assign writeM       = mload;
 // Input assignments
 assign m            = inM;
-// Muxer in CPU
+
+// Output assignments
+assign outM         = alu_out;
+assign addressM     = a[AW-1 : 0]; 
+assign writeM       = mload;
+
+// Muxer inside CPU module
 assign aload        = (instr_type   == 1'b1) ? cmd_d1   : 1'b1;
 assign ad           = (instr_type   == 1'b1) ? alu_out  : instr_v;
 assign y            = (cmd_a        == 1'b1) ? m        : a;
