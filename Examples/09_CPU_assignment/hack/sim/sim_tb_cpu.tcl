@@ -9,7 +9,7 @@ vsim -voptargs=+acc     work.tb_cpu
 
 log -r *
 
-do wave.do
+do cpu_wave.do
 
 run -all
 

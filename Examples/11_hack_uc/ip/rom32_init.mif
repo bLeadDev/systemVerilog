@@ -1,0 +1,10 @@
+DEPTH = 32768;  -- Depth of memory in words
+WIDTH = 16;    -- Width of data in bits
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+
+CONTENT
+BEGIN
+
+    [0..7FFF]: 0000; -- Fill the memory with all zeroes
+END;

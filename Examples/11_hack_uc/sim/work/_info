@@ -1,0 +1,369 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/admin/OneDrive - FH Vorarlberg/Dokumente/Semester 5/HDL/systemVerilog/Examples/11_hack_uc/sim
+valu
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 !s110 1700823400
+!i10b 1
+!s100 @`4eg89DHUCQaZ^LcLo931
+IYhkX6B8A6i^BLSUkmhj8R3
+S1
+R1
+w1697474035
+8../src/alu.sv
+F../src/alu.sv
+!i122 32
+L0 9 73
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2021.2;73
+r1
+!s85 0
+31
+Z6 !s108 1700823400.000000
+Z7 !s107 ../src/sevenseg.sv|../src/pcount.sv|../src/mem_slice.sv|../src/jmp_ctrl.sv|../src/instr_demux.sv|../src/dreg.sv|../src/data_mem.sv|../src/cpu.sv|../src/alu.sv|
+Z8 !s90 -reportprogress|300|-work|work|../src/alu.sv|../src/cpu.sv|../src/data_mem.sv|../src/dreg.sv|../src/instr_demux.sv|../src/jmp_ctrl.sv|../src/mem_slice.sv|../src/pcount.sv|../src/sevenseg.sv|
+!i113 0
+Z9 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z10 tCvgOpt 0
+vcpu
+R2
+R3
+!i10b 1
+!s100 U7KgY[o971<hG^KVnbPME3
+I^7ZR@VUAk?D<jiVXXXCIJ2
+S1
+R1
+w1700499453
+8../src/cpu.sv
+F../src/cpu.sv
+!i122 32
+L0 9 160
+R4
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R10
+vdata_mem
+!s105 data_mem_sv_unit
+DXx4 work 16 data_mem_sv_unit 0 22 IGcKGzd5?=PIaEEL0UP1D1
+R2
+R3
+!i10b 1
+!s100 7GkkP:[iMnSi=W;H`KiFU0
+IIUjI?>kWN8@Kf65SCW3AK2
+S1
+R1
+Z11 w1700819841
+Z12 8../src/data_mem.sv
+Z13 F../src/data_mem.sv
+!i122 32
+L0 9 105
+R4
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R10
+Xdata_mem_sv_unit
+R2
+R3
+VIGcKGzd5?=PIaEEL0UP1D1
+r1
+!s85 0
+!i10b 1
+!s100 ebc2MWnD1MU^_Ch@f2U@Z0
+IIGcKGzd5?=PIaEEL0UP1D1
+!i103 1
+S1
+R1
+R11
+R12
+R13
+!i122 32
+L0 113 0
+R5
+31
+R6
+R7
+R8
+!i113 0
+R9
+R10
+vdreg
+R2
+R3
+!i10b 1
+!s100 WfE[Ql^OWXJ1af[4lAA3;2
+Il9DjNN8VnOfA`fhidh_@[3
+S1
+R1
+w1698946014
+8../src/dreg.sv
+F../src/dreg.sv
+!i122 32
+L0 9 26
+R4
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R10
+vinstr_demux
+R2
+R3
+!i10b 1
+!s100 T]@M3c^ZPE_i8XF3XKfol2
+Ioaa[DYAYJ<E<Mmf0NUV@?0
+S1
+R1
+w1699367897
+8../src/instr_demux.sv
+F../src/instr_demux.sv
+!i122 32
+L0 9 65
+R4
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R10
+vjmp_ctrl
+R2
+R3
+!i10b 1
+!s100 >Zi3@VZYWUEcZ[h[XMY_d0
+IZmz`D4H3JgCJlkQ^omcmU0
+S1
+R1
+w1699374708
+8../src/jmp_ctrl.sv
+F../src/jmp_ctrl.sv
+!i122 32
+L0 9 71
+R4
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R10
+vmem_slice
+!s105 mem_slice_sv_unit
+DXx4 work 17 mem_slice_sv_unit 0 22 RjQQo2bcELLPI1f:LBMiF0
+R2
+R3
+!i10b 1
+!s100 Z:D57@Q_Il9m?mnX`fCd[1
+I8_[Gil:;8fJfD8DaUL[hZ1
+S1
+R1
+Z14 w1700820053
+Z15 8../src/mem_slice.sv
+Z16 F../src/mem_slice.sv
+!i122 32
+L0 9 25
+R4
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R10
+Xmem_slice_sv_unit
+R2
+R3
+VRjQQo2bcELLPI1f:LBMiF0
+r1
+!s85 0
+!i10b 1
+!s100 kYazO[ZB4NWBHE7ngQhO71
+IRjQQo2bcELLPI1f:LBMiF0
+!i103 1
+S1
+R1
+R14
+R15
+R16
+!i122 32
+L0 33 0
+R5
+31
+R6
+R7
+R8
+!i113 0
+R9
+R10
+vpcount
+R2
+R3
+!i10b 1
+!s100 9n^YjSfY2LmfNCQ?IETMP2
+IP7f>RQ]U[[d[Q;V5=B;lG1
+S1
+R1
+w1698946006
+8../src/pcount.sv
+F../src/pcount.sv
+!i122 32
+L0 9 29
+R4
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R10
+vram16k
+R3
+!i10b 1
+!s100 VaYnQozb1E0eX1DK[fI1b3
+IQKQ6DjS<i>W9Q1L2EQ4IJ2
+R1
+w1700814677
+8../ip/ram16k.v
+F../ip/ram16k.v
+!i122 33
+L0 40 68
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 ../ip/ram16k.v|
+!s90 -reportprogress|300|-work|work|../ip/ram16k.v|
+!i113 0
+R9
+R10
+vrom32k
+!s110 1700821562
+!i10b 1
+!s100 ?3R?m`8fKfbV7^:6>T1^f1
+Id_@_:z@7P@P37B]=Q^Ee13
+R1
+w1700814379
+8../ip/rom32k_bb.v
+F../ip/rom32k_bb.v
+!i122 21
+L0 35 17
+R4
+R5
+r1
+!s85 0
+31
+!s108 1700821562.000000
+!s107 ../ip/rom32k_bb.v|../ip/rom32k.v|../ip/ram16k_bb.v|../ip/ram16k.v|
+!s90 -reportprogress|300|-work|work|../ip/ram16k.v|../ip/ram16k_bb.v|../ip/rom32k.v|../ip/rom32k_bb.v|
+!i113 0
+R9
+R10
+vsevenseg
+R2
+R3
+!i10b 1
+!s100 ;^PK`e[z:EAVa=<1aQj:h0
+ILWVkMW0j:7ae96a?UemWg3
+S1
+R1
+w1696605950
+8../src/sevenseg.sv
+F../src/sevenseg.sv
+!i122 32
+L0 8 35
+R4
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R10
+vtb_data_mem
+R2
+R3
+!i10b 1
+!s100 d?aAHRmAhDcXE0hVSKf:C2
+I_Tn`M2]Y6SbTQRb84n:CK2
+S1
+R1
+w1700823397
+8tb_data_mem.sv
+Ftb_data_mem.sv
+!i122 34
+L0 11 195
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 tb_data_mem.sv|
+!s90 -reportprogress|300|-work|work|tb_data_mem.sv|
+!i113 0
+R9
+R10
+Ttb_opt_disabled
+!s110 1700823401
+VW5^H`Gc]`nKD:lJOZ=2__2
+04 11 4 work tb_data_mem fast 0
+!s124 OEM10U6 
+o+acc -O0 -L altera_mf_ver
+R10
+ntb_opt_disabled
+OL;O;2021.2;73
