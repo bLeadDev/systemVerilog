@@ -7,8 +7,8 @@
 /////////////////////////////////////////////////////////////////////
 
 module uart_rx#(
-    parameter fclk = 50_000_000;
-    parameter baud = 115_200;
+    parameter fclk = 50_000_000,
+    parameter baud = 115_200
 ) (
     input       logic           rst_n,
     input       logic           clk50m,
@@ -36,13 +36,17 @@ logic [3:0]             bc_cnt;     // stores the counting value from 0-7, when 
 logic                   bc_clr;     // to clear the bit counter value
 logic                   bc_end;     // indicates that the counter is >= 8
 
+logic                   set_rx_error;
+logic                   set_rx_ready;
+logic                   reset_rx_error;
+logic                   reset_rx_ready;
 
-typedef enum logic[2:0] {IDLE, START, RCV, STOP, DATA, ERROR} state_t;
+typedef enum logic[2:0] {IDLE, RCV_START, RCV_DATA, RCV_STOP} state_t;
 state_t                 state;
 state_t                 state_next;
 
 //sequential part
-always_ff @( negedge rst_n or posedge clk ) begin : state_ff
+always_ff @( negedge rst_n or posedge clk50m ) begin : ff_state
     if (~rst_n) begin
         state <= IDLE;
     end
@@ -57,48 +61,74 @@ always_comb begin : state_comb
     state_next  = state; 
     
     // outputs
-    rx_data     = '0;
-    rx_ready    = 1'b0;
-    rx_error    = 1'b0;
     rx_idle     = 1'b0;
 
     // do not reset counter values;; only do it in idle/data/error state
-    wc_zero     = 1'b0;
+    wc_load     = 1'b0;
     bc_clr      = 1'b0;
+    bc_inc      = 1'b0;
+
+    set_rx_error    = 1'b0;
+    reset_rx_error    = 1'b0;
+    set_rx_ready    = 1'b0;
+    reset_rx_ready    = 1'b0;
 
     case (state)
     IDLE: begin
-        wc_zero     = 1'b1;
         bc_clr      = 1'b1;
         rx_idle     = 1'b1;
 
         if (~rx) begin
             wc_load     = 1'b1;
-            state_next  = START;
+            state_next  = RCV_START;
         end
     end
-    START: begin
-        if (wc_zero) begin
-            wc_load     = 1'b1;
-            state_next  = DATA;
-        end
-    end
-    DATA: begin
+    RCV_START: begin
+        // Delete error or ready flags
+        reset_rx_error = 1'b1;
+        reset_rx_ready = 1'b1;
+        // Restart counter in middle and set state to rcv data
+        // No detection if start bit changed state of is flickering
         if (wc_mid) begin
-            // sample data on bus
-
-        end
-
-        if (wc_zero) begin
-            // get next bit
-        end
-
-        if (bc_end) begin
-            // end of data, stop bit still missing
+            wc_load = 1'b1;
+            state_next = RCV_DATA;
         end
     end
-    STOP: begin
-        
+    RCV_DATA: begin
+        if (wc_zero) begin
+            // sample bit, increase bit count and reload width counter
+            rx_data[bc_cnt]     = rx;
+            bc_inc              = 1'b1;
+            wc_load             = 1'b1;
+        end
+
+        if (bc_end & wc_mid) begin
+            // end of data, reload width counter for stop bit
+            bc_inc      = 1'b1;
+            wc_load     = 1'b1;
+            bc_clr      = 1'b1;
+            state_next  = RCV_STOP;
+        end
+    end
+    RCV_STOP: begin
+
+        if (wc_zero) begin
+            // Stop bit was constantly zero, everything is okay
+            set_rx_ready    = 1'b1;
+            state_next      = IDLE;          
+        end
+
+        if (~rx) begin
+            // RX line is low, count occurence
+            bc_inc      = 1'b1;
+        end
+
+        // If rx was low for more than one clock cycle, set error 
+        if (bc_cnt > 2'b01) begin
+            set_rx_error    = 1'b1;
+            state_next      = IDLE;
+        end 
+    
     end
 
     endcase
@@ -107,7 +137,7 @@ end
 
 
 // WIDTH counter
-always_ff @(posedge clk50m or negedge rst_n) begin
+always_ff @(posedge clk50m or negedge rst_n) begin : ff_wid_count
     if (~rst_n) begin
         wc_cnt <= '0;
     end
@@ -122,7 +152,7 @@ assign wc_zero = (wc_cnt == '0);
 assign wc_mid  = (wc_cnt <= (WC_STARTVAL/2));
 
 // BIT counter
-always_ff @(posedge clk50m or negedge rst_n) begin
+always_ff @(posedge clk50m or negedge rst_n) begin : ff_bit_count
     if (~rst_n) begin
         bc_cnt <= '0;
     end 
@@ -133,7 +163,31 @@ always_ff @(posedge clk50m or negedge rst_n) begin
         bc_cnt <= bc_cnt + 1'b1;
     end
 end 
-assign bc_end = (bc_cnt >= 3'd8);
+assign bc_end = (bc_cnt > 3'd7);
+
+// Use flip flops for rx_ready and rx_error and set and clear them using the state machine
+always_ff @(negedge rst_n or posedge clk50m) begin : ff_rx_error 
+    if (~rst_n) begin
+        rx_error <= 1'b0;
+    end
+    else if (reset_rx_error) begin
+        rx_error <= 1'b0;
+    end else if (set_rx_error) begin
+        rx_error <= 1'b1;
+    end
+end
+
+always_ff @(negedge rst_n or posedge clk50m) begin : ff_rx_ready
+    if (~rst_n) begin
+        rx_ready <= 1'b0;
+    end
+    else if (reset_rx_ready) begin
+        rx_ready <= 1'b0;
+    end else if (set_rx_ready) begin
+        rx_ready <= 1'b1;
+    end
+end
+
 
 
 endmodule

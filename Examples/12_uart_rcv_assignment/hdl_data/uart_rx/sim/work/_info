@@ -1,0 +1,100 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/admin/OneDrive - FH Vorarlberg/Dokumente/Semester 5/HDL/systemVerilog/Examples/12_uart_rcv_assignment/hdl_data/uart_rx/sim
+T_opt
+!s110 1701341912
+VaGOXP?E>5]jVo1F@6<E900
+04 10 4 work tb_uart_rx fast 0
+=1-e86a64b1ff49-65686ad7-2f6-a58
+!s124 OEM10U2 
+o-quiet -auto_acc_if_foreign -work work +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2021.2;73
+vtb
+Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+!s110 1701340419
+!i10b 1
+!s100 2k8M5z]SW]07Ji`O@BY5M2
+I5lYX?FX;7^M=oaG?oYCf03
+S1
+R1
+w1701340403
+Z4 8tb_uart_rx.sv
+Z5 Ftb_uart_rx.sv
+!i122 6
+L0 10 85
+Z6 VDg1SIo80bB@j0V0VzS_@n1
+Z7 OL;L;2021.2;73
+r1
+!s85 0
+31
+!s108 1701340419.000000
+Z8 !s107 tb_uart_rx.sv|
+Z9 !s90 -reportprogress|300|-work|work|tb_uart_rx.sv|
+!i113 0
+Z10 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vtb_uart_rx
+R3
+Z11 !s110 1701341909
+!i10b 1
+!s100 0QZY2g@NV=<HBoIg5nbQI1
+IElbV:`7DjChm[L3;6K9kj2
+S1
+R1
+w1701341902
+R4
+R5
+!i122 24
+L0 10 92
+R6
+R7
+r1
+!s85 0
+31
+Z12 !s108 1701341909.000000
+R8
+R9
+!i113 0
+R10
+R2
+vuart_rx
+R3
+R11
+!i10b 1
+!s100 M`enKS?^LDLQ4o>JjYQ020
+IaXcDIcZ1nBGD^4f<OUNmi1
+S1
+R1
+w1701341619
+8../src/uart_rx.sv
+F../src/uart_rx.sv
+!i122 23
+L0 9 185
+R6
+R7
+r1
+!s85 0
+31
+R12
+!s107 ../src/uart_rx.sv|
+!s90 -reportprogress|300|-work|work|../src/uart_rx.sv|
+!i113 0
+R10
+R2
