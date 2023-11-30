@@ -8,6 +8,7 @@ R0
 R0
 R0
 R0
+R0
 !s11f vlog 2021.2 2021.04, Apr 14 2021
 13
 !s112 1.1
@@ -17,10 +18,10 @@ R0
 cModel Technology
 Z1 dC:/Users/admin/OneDrive - FH Vorarlberg/Dokumente/Semester 5/HDL/systemVerilog/Examples/12_uart_rcv_assignment/hdl_data/uart_rx/sim
 T_opt
-!s110 1701341912
-VaGOXP?E>5]jVo1F@6<E900
+!s110 1701342520
+Vk1SV_<OhiT3e`oUIc0K791
 04 10 4 work tb_uart_rx fast 0
-=1-e86a64b1ff49-65686ad7-2f6-a58
+=1-e86a64b1ff49-65686d38-b5-2610
 !s124 OEM10U2 
 o-quiet -auto_acc_if_foreign -work work +acc
 Z2 tCvgOpt 0
@@ -52,23 +53,23 @@ Z10 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R2
 vtb_uart_rx
 R3
-Z11 !s110 1701341909
+Z11 !s110 1701342518
 !i10b 1
-!s100 0QZY2g@NV=<HBoIg5nbQI1
-IElbV:`7DjChm[L3;6K9kj2
+!s100 f[>W93Kjm5fNdE0aC]cdd1
+IW:IN^fmonVf]8gjYUm_Vb3
 S1
 R1
-w1701341902
+w1701342512
 R4
 R5
-!i122 24
-L0 10 92
+!i122 28
+L0 10 131
 R6
 R7
 r1
 !s85 0
 31
-Z12 !s108 1701341909.000000
+Z12 !s108 1701342518.000000
 R8
 R9
 !i113 0
@@ -85,7 +86,7 @@ R1
 w1701341619
 8../src/uart_rx.sv
 F../src/uart_rx.sv
-!i122 23
+!i122 27
 L0 9 185
 R6
 R7

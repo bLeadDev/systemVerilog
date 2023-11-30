@@ -126,6 +126,7 @@ always_comb begin : state_comb
         // If rx was low for more than one clock cycle, set error 
         if (bc_cnt > 2'b01) begin
             set_rx_error    = 1'b1;
+            set_rx_ready    = 1'b1;
             state_next      = IDLE;
         end 
     
@@ -187,6 +188,18 @@ always_ff @(negedge rst_n or posedge clk50m) begin : ff_rx_ready
         rx_ready <= 1'b1;
     end
 end
+
+always_ff @(negedge rst_n or posedge clk50m) begin : ff_rx_edge_detect
+    if (~rst_n) begin
+        rx_ready <= 1'b0;
+    end
+    else if (reset_rx_ready) begin
+        rx_ready <= 1'b0;
+    end else if (set_rx_ready) begin
+        rx_ready <= 1'b1;
+    end
+end
+
 
 
 
