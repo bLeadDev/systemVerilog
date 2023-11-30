@@ -9,6 +9,13 @@ R0
 R0
 R0
 R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
 !s11f vlog 2021.2 2021.04, Apr 14 2021
 13
 !s112 1.1
@@ -18,17 +25,28 @@ R0
 cModel Technology
 Z1 dC:/Users/admin/OneDrive - FH Vorarlberg/Dokumente/Semester 5/HDL/systemVerilog/Examples/12_uart_rcv_assignment/hdl_data/uart_rx/sim
 T_opt
-!s110 1701342520
-Vk1SV_<OhiT3e`oUIc0K791
-04 10 4 work tb_uart_rx fast 0
-=1-e86a64b1ff49-65686d38-b5-2610
-!s124 OEM10U2 
-o-quiet -auto_acc_if_foreign -work work +acc
-Z2 tCvgOpt 0
+!s110 1701365317
+VgS]?OPnW`_eWQOUTHk2HB3
+Z2 04 10 4 work tb_uart_rx fast 0
+=1-e86a64b1ff49-6568c644-394-3a9c
+Z3 !s124 OEM10U2 
+Z4 o-quiet -auto_acc_if_foreign -work work +acc
+Z5 tCvgOpt 0
 n@_opt
-OL;O;2021.2;73
+Z6 OL;O;2021.2;73
+R1
+T_opt1
+!s110 1701366467
+VTU8S;B1=DSOeCk6YU>A^f3
+R2
+=1-e86a64b1ff49-6568cac2-395-36e8
+R3
+R4
+R5
+n@_opt1
+R6
 vtb
-Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z7 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
 !s110 1701340419
 !i10b 1
 !s100 2k8M5z]SW]07Ji`O@BY5M2
@@ -36,66 +54,66 @@ I5lYX?FX;7^M=oaG?oYCf03
 S1
 R1
 w1701340403
-Z4 8tb_uart_rx.sv
-Z5 Ftb_uart_rx.sv
+Z8 8tb_uart_rx.sv
+Z9 Ftb_uart_rx.sv
 !i122 6
 L0 10 85
-Z6 VDg1SIo80bB@j0V0VzS_@n1
-Z7 OL;L;2021.2;73
+Z10 VDg1SIo80bB@j0V0VzS_@n1
+Z11 OL;L;2021.2;73
 r1
 !s85 0
 31
 !s108 1701340419.000000
-Z8 !s107 tb_uart_rx.sv|
-Z9 !s90 -reportprogress|300|-work|work|tb_uart_rx.sv|
+Z12 !s107 tb_uart_rx.sv|
+Z13 !s90 -reportprogress|300|-work|work|tb_uart_rx.sv|
 !i113 0
-Z10 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R2
+Z14 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R5
 vtb_uart_rx
-R3
-Z11 !s110 1701342518
+R7
+!s110 1701366463
 !i10b 1
-!s100 f[>W93Kjm5fNdE0aC]cdd1
-IW:IN^fmonVf]8gjYUm_Vb3
+!s100 ;<i=8;>z;APUDCn62Q7]i1
+IVW>2=K;FASMHIKV65=Yaj0
 S1
 R1
-w1701342512
-R4
-R5
-!i122 28
-L0 10 131
-R6
-R7
-r1
-!s85 0
-31
-Z12 !s108 1701342518.000000
+w1701366459
 R8
 R9
-!i113 0
+!i122 45
+L0 10 200
 R10
-R2
-vuart_rx
-R3
 R11
-!i10b 1
-!s100 M`enKS?^LDLQ4o>JjYQ020
-IaXcDIcZ1nBGD^4f<OUNmi1
-S1
-R1
-w1701341619
-8../src/uart_rx.sv
-F../src/uart_rx.sv
-!i122 27
-L0 9 185
-R6
-R7
 r1
 !s85 0
 31
+Z15 !s108 1701366462.000000
 R12
+R13
+!i113 0
+R14
+R5
+vuart_rx
+R7
+!s110 1701366462
+!i10b 1
+!s100 8GdWnl2MzgSYZWam2zC8M1
+I0JbThN5>C?L>7G2QHla8R1
+S1
+R1
+w1701365909
+8../src/uart_rx.sv
+F../src/uart_rx.sv
+!i122 44
+L0 9 195
+R10
+R11
+r1
+!s85 0
+31
+R15
 !s107 ../src/uart_rx.sv|
 !s90 -reportprogress|300|-work|work|../src/uart_rx.sv|
 !i113 0
-R10
-R2
+R14
+R5

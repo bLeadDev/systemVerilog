@@ -36,49 +36,45 @@ logic [3:0]             bc_cnt;     // stores the counting value from 0-7, when 
 logic                   bc_clr;     // to clear the bit counter value
 logic                   bc_end;     // indicates that the counter is >= 8
 
-logic                   set_rx_error;
-logic                   set_rx_ready;
-logic                   reset_rx_error;
-logic                   reset_rx_ready;
+// Set reset error and ready signals
+logic                   set_rx_error;   // Data transmission error.
+logic                   set_rx_ready;   // Data ready to be taken from parallel bus
+logic                   reset_rx_error; // Reset transmission error
+logic                   reset_rx_ready; // Reset data ready
+
+// RX line edge detection
+logic                   state_rx_line;
+logic                   rx_fall;
+logic                   rx_rise;
 
 typedef enum logic[2:0] {IDLE, RCV_START, RCV_DATA, RCV_STOP} state_t;
 state_t                 state;
 state_t                 state_next;
 
-//sequential part
-always_ff @( negedge rst_n or posedge clk50m ) begin : ff_state
-    if (~rst_n) begin
-        state <= IDLE;
-    end
-    else begin
-        state <= state_next;
-    end
-end
-
-//combinatorial part
+// Combinatorial part
 always_comb begin : state_comb
-    //defaults
+    // Defaults
     state_next  = state; 
     
-    // outputs
+    // Outputs
     rx_idle     = 1'b0;
 
-    // do not reset counter values;; only do it in idle/data/error state
-    wc_load     = 1'b0;
-    bc_clr      = 1'b0;
-    bc_inc      = 1'b0;
+    // Do not reset counter values;; only do it in IDLE state
+    wc_load             = 1'b0;
+    bc_clr              = 1'b0;
+    bc_inc              = 1'b0;
 
-    set_rx_error    = 1'b0;
-    reset_rx_error    = 1'b0;
-    set_rx_ready    = 1'b0;
-    reset_rx_ready    = 1'b0;
+    set_rx_error        = 1'b0;
+    reset_rx_error      = 1'b0;
+    set_rx_ready        = 1'b0;
+    reset_rx_ready      = 1'b0;
 
     case (state)
     IDLE: begin
         bc_clr      = 1'b1;
         rx_idle     = 1'b1;
 
-        if (~rx) begin
+        if (rx_fall) begin
             wc_load     = 1'b1;
             state_next  = RCV_START;
         end
@@ -88,7 +84,7 @@ always_comb begin : state_comb
         reset_rx_error = 1'b1;
         reset_rx_ready = 1'b1;
         // Restart counter in middle and set state to rcv data
-        // No detection if start bit changed state of is flickering
+        // No detection if start bit changed state or is flickering
         if (wc_mid) begin
             wc_load = 1'b1;
             state_next = RCV_DATA;
@@ -96,14 +92,14 @@ always_comb begin : state_comb
     end
     RCV_DATA: begin
         if (wc_zero) begin
-            // sample bit, increase bit count and reload width counter
+            // Sample bit, increase bit count and reload width counter
             rx_data[bc_cnt]     = rx;
             bc_inc              = 1'b1;
             wc_load             = 1'b1;
         end
 
         if (bc_end & wc_mid) begin
-            // end of data, reload width counter for stop bit
+            // End of data, reload width counter for stop bit
             bc_inc      = 1'b1;
             wc_load     = 1'b1;
             bc_clr      = 1'b1;
@@ -118,24 +114,26 @@ always_comb begin : state_comb
             state_next      = IDLE;          
         end
 
-        if (~rx) begin
-            // RX line is low, count occurence
-            bc_inc      = 1'b1;
-        end
-
-        // If rx was low for more than one clock cycle, set error 
-        if (bc_cnt > 2'b01) begin
+        // If rx has a negedge signal error 
+        if (rx_fall) begin
             set_rx_error    = 1'b1;
             set_rx_ready    = 1'b1;
             state_next      = IDLE;
         end 
-    
     end
-
     endcase
 
 end
 
+//sequential part
+always_ff @( negedge rst_n or posedge clk50m ) begin : ff_state
+    if (~rst_n) begin
+        state <= IDLE;
+    end
+    else begin
+        state <= state_next;
+    end
+end
 
 // WIDTH counter
 always_ff @(posedge clk50m or negedge rst_n) begin : ff_wid_count
@@ -189,18 +187,17 @@ always_ff @(negedge rst_n or posedge clk50m) begin : ff_rx_ready
     end
 end
 
-always_ff @(negedge rst_n or posedge clk50m) begin : ff_rx_edge_detect
+// FF for edge detection on rx line
+always_ff @(negedge rst_n or posedge clk50m) begin : ff_rx_edge_det
     if (~rst_n) begin
-        rx_ready <= 1'b0;
+        state_rx_line <= 1'b0;
     end
-    else if (reset_rx_ready) begin
-        rx_ready <= 1'b0;
-    end else if (set_rx_ready) begin
-        rx_ready <= 1'b1;
+    else begin // (2) synchronous behaviour
+        state_rx_line <= rx;
     end
-end
-
-
-
+end 
+    
+assign rx_fall = (rx == 1'b0) && (state_rx_line == 1'b1);
+assign rx_rise = (rx == 1'b1) && (state_rx_line == 1'b0);
 
 endmodule

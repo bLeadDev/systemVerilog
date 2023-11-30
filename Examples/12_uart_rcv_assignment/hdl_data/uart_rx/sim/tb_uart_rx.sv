@@ -34,12 +34,12 @@ string check = "";
 initial begin
     rst_n       = 1'b0;
     rx          = 1'b0;
-    #100ns;
+    #1000ns;
     rst_n       = 1'b1;
     rx          = 1'b1;
     action = "POR done";
     $display(action);
-    #100ns;
+    #1000ns;
     // POR DONE
     
     // TESTBLOCK: sending legal bit sequence
@@ -52,10 +52,27 @@ initial begin
     action = "Sending bit sequnce [7:0] 01010101";
     $display(action);
 
-    for (int i = 0;i < 8; i++) begin
-        rx          = ~rx;
-        #8670ns;
-    end
+    rx = ~rx;
+    #8670ns;
+    rx = ~rx;
+    #8670ns;
+    rx = ~rx;
+    #8670ns;
+    rx = ~rx;
+    #8670ns;
+    rx = ~rx;
+    #8670ns;
+    rx = ~rx;
+    #8670ns;
+    rx = ~rx;
+    #8670ns;
+    rx = ~rx;
+    #8670ns;
+
+    // for (int i = 0; i < 8; i++) begin
+    //     rx          = ~rx;
+    //     #8670ns;
+    // end
     action = "Sending stop bit";
     $display(action);
     rx              = 1'b1; 
@@ -96,6 +113,7 @@ initial begin
     rx              = 1'b0; // RX low for 2 cycles, error should be activated
     @(negedge clk50m);
     @(negedge clk50m);
+    rx              = 1'b1;
     #8600ns;
 
     // Wait for a bit to settle down. Timing bit period is not 100% accurate.
@@ -111,6 +129,57 @@ initial begin
         $error(check);
     end
     // END TESTBLOCK
+
+    // TESTBLOCK: sending legal bit sequence
+    action = "Sending start bit";
+    $display(action);
+    rx          = 1'b0;
+    #8670ns;
+
+
+    action = "Sending bit sequnce [7:0] 01010101";
+    $display(action);
+
+    rx = ~rx;
+    #8670ns;
+    rx = 1'b1;
+    #8670ns;
+    rx = ~rx;
+    #8670ns;
+    rx = ~rx;
+    #8670ns;
+    rx = ~rx;
+    #8670ns;
+    rx = ~rx;
+    #8670ns;
+    rx = ~rx;
+    #8670ns;
+    rx = ~rx;
+    #8670ns;
+
+    // for (int i = 0; i < 8; i++) begin
+    //     rx          = ~rx;
+    //     #8670ns;
+    // end
+    action = "Sending stop bit";
+    $display(action);
+    rx              = 1'b1; 
+    #8600ns;
+
+    // Wait for a bit to settle down. Timing bit period is not 100% accurate.
+    #1000ns;
+    
+    #100ns;
+    check = "Checking bit sequence [7:0] b0101_0101, data ready, idle and no error flags";
+    if (rx_data == 8'b0101_0101 && rx_data == 1'b1 && rx_idle == 1'b1 && rx_error == 1'b0) begin
+        pass_cnt++;
+    end
+    else begin
+        err_cnt++;
+        $error(check);
+    end
+    // END TESTBLOCK
+
 
     if(err_cnt > 0) begin
         $display("Passed %0d/%0d tests.", pass_cnt, pass_cnt + err_cnt);
