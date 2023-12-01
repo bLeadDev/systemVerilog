@@ -9,9 +9,9 @@
 
 module tb_uart_rx ();
 
-localparam fclk = 50_000_000;
-localparam baud = 115_200;
-localparam bit_period =  1_000_000_000/baud; // ~8680 ns
+localparam fclk         = 50_000_000;
+localparam baud         = 115_200;
+localparam bit_period   =  1_000_000_000/baud; // ~8680 ns
 
 logic           rst_n;
 logic           clk50m;
@@ -26,7 +26,7 @@ logic           rx_idle;
 
 // Wires for connection with tx module and forced rx input
 logic           rx_mod;
-lgoci           rx_forced;
+logic           rx_forced;
 
 uart_rx dut (.*);
 uart_tx tx_mod (    .rst_n(rst_n),
