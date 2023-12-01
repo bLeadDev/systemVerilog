@@ -30,4 +30,4 @@ always_ff @( negedge rst_n or posedge clk50m ) begin : output_reg
     end
 end
 
-endmodule;
+endmodule

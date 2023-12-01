@@ -74,7 +74,8 @@ always_comb begin : state_comb
         bc_clr      = 1'b1;
         rx_idle     = 1'b1;
 
-        if (rx_fall) begin
+        if (~rx) begin
+        //if (rx_fall) begin
             wc_load     = 1'b1;
             state_next  = RCV_START;
         end

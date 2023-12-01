@@ -110,4 +110,4 @@ always_comb begin : data_out_mux
     end
 end
 
-endmodule;
+endmodule

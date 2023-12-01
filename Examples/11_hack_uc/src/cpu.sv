@@ -13,7 +13,7 @@ module cpu#(
 )
 (
     // IO ports
-    input       logic                           rst_n,
+    input       logic                           rst_n,  
     input       logic                           clk50m,
     input       logic                           en25m,
     input       logic       [DW-1 : 0]          instr,

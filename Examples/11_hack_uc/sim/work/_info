@@ -9,9 +9,6 @@ R0
 R0
 R0
 R0
-R0
-R0
-R0
 !s11f vlog 2021.2 2021.04, Apr 14 2021
 13
 !s112 1.1
@@ -22,7 +19,7 @@ cModel Technology
 Z1 dC:/Users/admin/OneDrive - FH Vorarlberg/Dokumente/Semester 5/HDL/systemVerilog/Examples/11_hack_uc/sim
 valu
 Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z3 !s110 1700823400
+Z3 !s110 1701430029
 !i10b 1
 !s100 @`4eg89DHUCQaZ^LcLo931
 IYhkX6B8A6i^BLSUkmhj8R3
@@ -31,16 +28,16 @@ R1
 w1697474035
 8../src/alu.sv
 F../src/alu.sv
-!i122 32
+!i122 42
 L0 9 73
 Z4 VDg1SIo80bB@j0V0VzS_@n1
 Z5 OL;L;2021.2;73
 r1
 !s85 0
 31
-Z6 !s108 1700823400.000000
-Z7 !s107 ../src/sevenseg.sv|../src/pcount.sv|../src/mem_slice.sv|../src/jmp_ctrl.sv|../src/instr_demux.sv|../src/dreg.sv|../src/data_mem.sv|../src/cpu.sv|../src/alu.sv|
-Z8 !s90 -reportprogress|300|-work|work|../src/alu.sv|../src/cpu.sv|../src/data_mem.sv|../src/dreg.sv|../src/instr_demux.sv|../src/jmp_ctrl.sv|../src/mem_slice.sv|../src/pcount.sv|../src/sevenseg.sv|
+Z6 !s108 1701430029.000000
+Z7 !s107 ../src/uc.sv|../src/sevenseg.sv|../src/pcount.sv|../src/mem_slice.sv|../src/jmp_ctrl.sv|../src/instr_demux.sv|../src/dreg.sv|../src/data_mem.sv|../src/cpu.sv|../src/alu.sv|
+Z8 !s90 -reportprogress|300|-work|work|../src/alu.sv|../src/cpu.sv|../src/data_mem.sv|../src/dreg.sv|../src/instr_demux.sv|../src/jmp_ctrl.sv|../src/mem_slice.sv|../src/pcount.sv|../src/sevenseg.sv|../src/uc.sv|
 !i113 0
 Z9 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 Z10 tCvgOpt 0
@@ -52,10 +49,10 @@ R3
 I^7ZR@VUAk?D<jiVXXXCIJ2
 S1
 R1
-w1700499453
+w1701422181
 8../src/cpu.sv
 F../src/cpu.sv
-!i122 32
+!i122 42
 L0 9 160
 R4
 R5
@@ -81,7 +78,7 @@ R1
 Z11 w1700819841
 Z12 8../src/data_mem.sv
 Z13 F../src/data_mem.sv
-!i122 32
+!i122 42
 L0 9 105
 R4
 R5
@@ -109,7 +106,7 @@ R1
 R11
 R12
 R13
-!i122 32
+!i122 42
 L0 113 0
 R5
 31
@@ -130,7 +127,7 @@ R1
 w1698946014
 8../src/dreg.sv
 F../src/dreg.sv
-!i122 32
+!i122 42
 L0 9 26
 R4
 R5
@@ -154,7 +151,7 @@ R1
 w1699367897
 8../src/instr_demux.sv
 F../src/instr_demux.sv
-!i122 32
+!i122 42
 L0 9 65
 R4
 R5
@@ -178,7 +175,7 @@ R1
 w1699374708
 8../src/jmp_ctrl.sv
 F../src/jmp_ctrl.sv
-!i122 32
+!i122 42
 L0 9 71
 R4
 R5
@@ -204,7 +201,7 @@ R1
 Z14 w1700820053
 Z15 8../src/mem_slice.sv
 Z16 F../src/mem_slice.sv
-!i122 32
+!i122 42
 L0 9 25
 R4
 R5
@@ -232,7 +229,7 @@ R1
 R14
 R15
 R16
-!i122 32
+!i122 42
 L0 33 0
 R5
 31
@@ -253,7 +250,7 @@ R1
 w1698946006
 8../src/pcount.sv
 F../src/pcount.sv
-!i122 32
+!i122 42
 L0 9 29
 R4
 R5
@@ -275,7 +272,7 @@ R1
 w1700814677
 8../ip/ram16k.v
 F../ip/ram16k.v
-!i122 33
+!i122 40
 L0 40 68
 R4
 R5
@@ -289,24 +286,24 @@ R6
 R9
 R10
 vrom32k
-!s110 1700821562
+R3
 !i10b 1
-!s100 ?3R?m`8fKfbV7^:6>T1^f1
-Id_@_:z@7P@P37B]=Q^Ee13
+!s100 2O^ElPTT>QCd?je`ZAB4b2
+IU_Ad6l_]b2^46UmL;mBSo2
 R1
 w1700814379
-8../ip/rom32k_bb.v
-F../ip/rom32k_bb.v
-!i122 21
-L0 35 17
+8../ip/rom32k.v
+F../ip/rom32k.v
+!i122 41
+L0 40 61
 R4
 R5
 r1
 !s85 0
 31
-!s108 1700821562.000000
-!s107 ../ip/rom32k_bb.v|../ip/rom32k.v|../ip/ram16k_bb.v|../ip/ram16k.v|
-!s90 -reportprogress|300|-work|work|../ip/ram16k.v|../ip/ram16k_bb.v|../ip/rom32k.v|../ip/rom32k_bb.v|
+R6
+!s107 ../ip/rom32k.v|
+!s90 -reportprogress|300|-work|work|../ip/rom32k.v|
 !i113 0
 R9
 R10
@@ -321,7 +318,7 @@ R1
 w1696605950
 8../src/sevenseg.sv
 F../src/sevenseg.sv
-!i122 32
+!i122 42
 L0 8 35
 R4
 R5
@@ -334,36 +331,84 @@ R8
 !i113 0
 R9
 R10
-vtb_data_mem
+vtb_top
 R2
 R3
 !i10b 1
-!s100 d?aAHRmAhDcXE0hVSKf:C2
-I_Tn`M2]Y6SbTQRb84n:CK2
+!s100 F?nF_7O>@Jb82FoYa62f_2
+I9[l7GzW1n[SA8k7eY6bzm0
 S1
 R1
-w1700823397
-8tb_data_mem.sv
-Ftb_data_mem.sv
-!i122 34
-L0 11 195
+w1701430023
+8tb_top.sv
+Ftb_top.sv
+!i122 43
+L0 11 72
 R4
 R5
 r1
 !s85 0
 31
 R6
-!s107 tb_data_mem.sv|
-!s90 -reportprogress|300|-work|work|tb_data_mem.sv|
+!s107 tb_top.sv|
+!s90 -reportprogress|300|-work|work|tb_top.sv|
 !i113 0
 R9
 R10
-Ttb_opt_disabled
-!s110 1700823401
-VW5^H`Gc]`nKD:lJOZ=2__2
-04 11 4 work tb_data_mem fast 0
-!s124 OEM10U6 
+Ttb_top_opt_disabled
+!s110 1701430030
+VR?1bNAfEjnN48KWM[58Z>1
+04 6 4 work tb_top fast 0
+!s124 OEM10U20 
 o+acc -O0 -L altera_mf_ver
 R10
-ntb_opt_disabled
+ntb_top_opt_disabled
 OL;O;2021.2;73
+vtoplevel_c5g_hex4_uart
+R2
+R3
+!i10b 1
+!s100 09a=<R7TJQGfL<MlSGil;1
+IEI_^8D97EK^5?GdZ0ia2g2
+S1
+R1
+w1701426668
+8../fpga/toplevel_c5g_hex4_uart.sv
+F../fpga/toplevel_c5g_hex4_uart.sv
+!i122 39
+L0 6 101
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 ../fpga/toplevel_c5g_hex4_uart.sv|
+!s90 -reportprogress|300|-work|work|../fpga/toplevel_c5g_hex4_uart.sv|
+!i113 0
+R9
+R10
+vuc
+R2
+R3
+!i10b 1
+!s100 RTo?>;a^^Oond^:Eh=YO50
+I<FR[Rm0A]Cj6g]E8SVKa;1
+S1
+R1
+w1701426781
+8../src/uc.sv
+F../src/uc.sv
+!i122 42
+L0 9 89
+R4
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R10
