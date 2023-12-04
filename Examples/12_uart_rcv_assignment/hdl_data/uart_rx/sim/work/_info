@@ -24,6 +24,21 @@ R0
 R0
 R0
 R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
 !s11f vlog 2021.2 2021.04, Apr 14 2021
 13
 !s112 1.1
@@ -37,24 +52,24 @@ T_opt
 VgS]?OPnW`_eWQOUTHk2HB3
 Z2 04 10 4 work tb_uart_rx fast 0
 =1-e86a64b1ff49-6568c644-394-3a9c
-Z3 !s124 OEM10U2 
-Z4 o-quiet -auto_acc_if_foreign -work work +acc
-Z5 tCvgOpt 0
+!s124 OEM10U2 
+Z3 o-quiet -auto_acc_if_foreign -work work +acc
+Z4 tCvgOpt 0
 n@_opt
-Z6 OL;O;2021.2;73
+Z5 OL;O;2021.2;73
 R1
 T_opt1
-!s110 1701368952
-V;Ug4bGCREF;YmA_[azzDU3
+!s110 1701462077
+V:aSDFE`7VK8=:LS:?Q:D@3
 R2
-=1-e86a64b1ff49-6568d478-1e6-23e0
+=1-e86a64b1ff49-656a403c-342-38e4
+!s124 OEM10U3 
 R3
 R4
-R5
 n@_opt1
-R6
+R5
 vtb
-Z7 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z6 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
 !s110 1701340419
 !i10b 1
 !s100 2k8M5z]SW]07Ji`O@BY5M2
@@ -62,66 +77,90 @@ I5lYX?FX;7^M=oaG?oYCf03
 S1
 R1
 w1701340403
-Z8 8tb_uart_rx.sv
-Z9 Ftb_uart_rx.sv
+Z7 8tb_uart_rx.sv
+Z8 Ftb_uart_rx.sv
 !i122 6
 L0 10 85
-Z10 VDg1SIo80bB@j0V0VzS_@n1
-Z11 OL;L;2021.2;73
+Z9 VDg1SIo80bB@j0V0VzS_@n1
+Z10 OL;L;2021.2;73
 r1
 !s85 0
 31
 !s108 1701340419.000000
-Z12 !s107 tb_uart_rx.sv|
-Z13 !s90 -reportprogress|300|-work|work|tb_uart_rx.sv|
+Z11 !s107 tb_uart_rx.sv|
+Z12 !s90 -reportprogress|300|-work|work|tb_uart_rx.sv|
 !i113 0
-Z14 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R5
+Z13 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R4
 vtb_uart_rx
-R7
-Z15 !s110 1701368949
+R6
+Z14 !s110 1701462073
 !i10b 1
-!s100 4=66E4?8:E<LA8`_?oYSX2
-I5B:Mb<GRSWz;dGc[2;UJ80
+!s100 13@<E5`gILCKC62FTzIdU2
+Il48zX^I91_Q:4R_fWVZ6O0
 S1
 R1
-w1701368944
+w1701462065
+R7
 R8
+!i122 160
+L0 10 199
 R9
-!i122 64
-L0 10 132
 R10
-R11
 r1
 !s85 0
 31
-Z16 !s108 1701368949.000000
+Z15 !s108 1701462073.000000
+R11
 R12
-R13
 !i113 0
-R14
-R5
+R13
+R4
 vuart_rx
-R7
-R15
+R6
+R14
 !i10b 1
-!s100 Q^AG3m5CbM`61Vbh5z[CC1
-IHO23n95M2NmV<R9nX[=9N3
+!s100 UzoPN9a6n>J6RaIdb5VnG0
+I7<1@9JdgA7DflBjXOmlPQ2
 S1
 R1
-w1701368059
+w1701456581
 8../src/uart_rx.sv
 F../src/uart_rx.sv
-!i122 63
+!i122 158
 L0 9 196
+R9
 R10
-R11
 r1
 !s85 0
 31
-R16
+R15
 !s107 ../src/uart_rx.sv|
 !s90 -reportprogress|300|-work|work|../src/uart_rx.sv|
 !i113 0
+R13
+R4
+vuart_tx
+R6
 R14
-R5
+!i10b 1
+!s100 TACnH1dKb1l;1NS8oPWWa1
+IX?MffjeLMD<?99^l12=lA1
+S1
+R1
+w1701456473
+8../src/uart_tx.sv
+F../src/uart_tx.sv
+!i122 159
+L0 10 126
+R9
+R10
+r1
+!s85 0
+31
+R15
+!s107 ../src/uart_tx.sv|
+!s90 -reportprogress|300|-work|work|../src/uart_tx.sv|
+!i113 0
+R13
+R4

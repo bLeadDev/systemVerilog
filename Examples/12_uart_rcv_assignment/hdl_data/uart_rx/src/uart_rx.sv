@@ -116,7 +116,7 @@ always_comb begin : state_comb
         end
 
         // If rx has a negedge signal error 
-        if (rx_fall) begin
+        if (~rx) begin
             set_rx_error    = 1'b1;
             set_rx_ready    = 1'b1;
             state_next      = IDLE;
