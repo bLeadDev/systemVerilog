@@ -8,7 +8,7 @@
 
 module tb_lut_1596 (); 
     logic [3:0] x;
-    logic       y:
+    logic       y;
 
     lut_1596 dut (.*);  // connects all inputs to signals of the same name
 

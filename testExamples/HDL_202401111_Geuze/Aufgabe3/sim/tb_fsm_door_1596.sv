@@ -66,8 +66,16 @@ module tb_fsm_door_1596();
         sense_up    = 1'b0;
         #1us;
         sense_down  = 1'b1;
-
         #1us;               
+
+// Testing non-normal key press. Motor should keep turning and NOT turn on ML while MR is on. 
+        key_up      = 1'b1;
+        #1us;
+        key_up      = 1'b0;
+        #1us;
+        key_down    = 1'b1;
+        #1us;
+        key_down    = 1'b0;    
 
         run_sim = 1'b0;
 

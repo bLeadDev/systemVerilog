@@ -18,6 +18,7 @@ module fsm_door_1596
 // State definition/enumeration
 typedef enum logic[2:0] {START_UP, IS_OPEN, IS_CLOSED, DRV_OPEN, DRV_CLOSED} state_t;
 state_t                 state;
+state_t                 state_next;
 
 // State dreg
 always_ff @( negedge rst_n or posedge clk2m ) begin : state_ff

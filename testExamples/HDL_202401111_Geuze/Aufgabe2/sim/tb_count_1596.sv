@@ -40,7 +40,7 @@ module tb_count_1596();
         en          = 1'b0;
         updn        = 1'b0;
         load        = 1'b0;
-        cnt_in      = '0;
+        data_in     = '0;
 
         #70ns;
         $display("POR");
@@ -49,10 +49,11 @@ module tb_count_1596();
         #100ns;               // # waits for a time
         en = 1'b1;             // enable counter
         for (int i = 0; i < 16; i ++) begin
-            @(negedge clk5m); // count up to 16
+            @(negedge clk5m); // count up to 15
         end
-        updn = 1'b0;
-        for (int i = 0; i < 16; i ++) begin
+
+        updn = 1'b1;
+        for (int i = 0; i < 15; i ++) begin
             @(negedge clk5m); // count down to 0
         end
         
@@ -61,13 +62,14 @@ module tb_count_1596();
             @(negedge clk5m); // do not count
         end
 
-        cnt_in = 10'd42;
+        data_in = 10'd42;
         load = 1'b1;
         @(negedge clk5m); // load 42 into counter
 
+        load = 1'b0;
         en = 1'b1;
         for (int i = 0; i < 16; i ++) begin
-            @(negedge clk5m); // do down from 42
+            @(negedge clk5m); // go down from 42 
         end
 
         #50ns;               

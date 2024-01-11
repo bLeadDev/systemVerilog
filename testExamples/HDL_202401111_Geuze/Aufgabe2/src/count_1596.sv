@@ -19,7 +19,7 @@ module count_1596
     output      logic       [9 : 0]             cnt
 );
 
-always_ff @(negedge rst_n or posedge clk50m) begin 
+always_ff @(negedge rst_n or posedge clk5m) begin 
     if (~rst_n) begin
         cnt <= 'd0;
     end 

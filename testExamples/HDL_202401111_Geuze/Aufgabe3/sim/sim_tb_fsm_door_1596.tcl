@@ -2,13 +2,13 @@
 vlib work
 
 # (2) Compile the SRC files
-vlog -work work         ../src/count_1596.sv
+vlog -work work         ../src/fsm_door_1596.sv
 
 # (3) Compile the TB files
-vlog -work work         tb_count_1596.sv
+vlog -work work         tb_fsm_door_1596.sv
 
 # (4) Start Simulation --> module name (no extension!)
-vsim -voptargs=+acc     work.tb_count_1596
+vsim -voptargs=+acc     work.tb_fsm_door_1596
 
 # (5) Log all signals recursively
 log -r *

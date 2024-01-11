@@ -14,7 +14,7 @@ vsim -voptargs=+acc     work.tb_lut_1596
 log -r *
 
 # (5a) Call the wave format script
-#do wave.do
+do wave.do
 
 # (6) Run the simulation
 run -all 
