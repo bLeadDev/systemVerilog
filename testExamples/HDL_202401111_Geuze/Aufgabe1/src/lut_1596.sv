@@ -4,7 +4,6 @@ module lut_1596 (
     output          logic       y 
 );
 
-
 always_comb begin : sevenseg_logic
     case (x) 
         4'h4: y = 1'b1;

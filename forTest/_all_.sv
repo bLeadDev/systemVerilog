@@ -9,6 +9,12 @@ module uart_tx
     input   logic       [7:0]   tx_data,            //data payload
     output  logic               tx,                 //uart tx line
 )
+
+// State definition/enumeration
+typedef enum logic[1:0] {IDLE, START, DATA, STOP} state_t;
+state_t                 state;
+
+
 // Module logic here
 localparam WC_STARTVAL  = FCLK/BAUD - 1;
 //sequential part
