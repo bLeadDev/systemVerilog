@@ -1,0 +1,125 @@
+--------------------------------------------------
+--------------------------------------------------
+Pr�fung HDL, dd.mm.yyyy
+Name: Vorname, Nachname
+--------------------------------------------------
+--------------------------------------------------
+Allgemein
+--------------------------------------------------
+Legen Sie folgende Ordnerstruktur an: 
+	 \HDL_yyyymmdd_IhrNachname 
+		 - .\Aufgabe1 
+			 - .\src --> Design Files 
+			 - .\sim --> Testbenches und TCL Scripts 
+		 - .\Aufgabe2 
+			 - .\src --> Design Files 
+			 - .\sim --> Testbenches und TCL Scripts 
+		 - .\Aufgabe3 
+			 - .\src --> Design Files 
+			 - .\sim --> Testbenches und TCL Scripts 
+		 - .\Aufgabe4 
+			 - .\src --> Design Files 
+			 - .\sim --> Testbenches und TCL Scripts 
+Erstellen Sie zur Abgabe ein zip-File des gesamten Ordners und laden Sie dieses in ILIAS hoch.
+
+--------------------------------------------------
+Aufgabe 1 � Kombinatorische Logik
+--------------------------------------------------
+
+Implementieren Sie die folgende Wahrheitstabelle in System Verilog (5 Punkte)
+Das SystemVerilog Modul soll den Namen "lut_1596" haben.
+ Eingang: x[3:0].
+ Ausgang: y.
+x[3]	x[2]	x[1]	x[0]	y
+0		0		0		0		0
+0		0		0		1		0
+0		0		1		0		0
+0		0		1		1		0
+0		1		0		0		1
+0		1		0		1		0
+0		1		1		0		0
+0		1		1		1		0
+1		0		0		0		1
+1		0		0		1		0
+1		0		1		0		1
+1		0		1		1		0
+1		1		0		0		0
+1		1		0		1		0
+1		1		1		0		0
+1		1		1		1		0
+
+Erstellen Sie dazu eine Testbench "tb_lut_1596" (7 Punkte).
+- Es soll f�r alle M�glichkeiten des Eingangs x der Ausgang y �berpr�ft werden.
+- Geben Sie am Ende der TB eine "Pass/Fail" Meldung mit der Anzahl der gefundenen Fehler aus.
+- Im Wave Fenster sollen die Signal x und y dargestellt sein.
+
+Erstellen Sie ein TCL Skript mit dessen Hilfe der gesamte Kompilier, Simulations- und Ausgabeprozess gesteuert wird (3 Punkte).
+
+
+--------------------------------------------------
+Aufgabe 2 � Z�hler
+--------------------------------------------------
+
+Erstellen Sie ein SystemVerilog Module "count_1596" das folgende Funktion implementiert (7 Punkte):
+- 10 Bit Bin�rz�hler mit einstellbarer Z�hlrichtung, parallel load und enable.
+- Es gibt ein active low reset signal.
+- Die Clock besitzt eine Frequenz von 5 MHz. 
+Eing�nge:
+- rst_n (active low reset).
+- eine Clock --> bitte sprechenden Namen verwenden (aktive Flanke: posedge).
+- data_in: (Daten f�r parallel load, gleiche Bitbreite wie der Z�hler).
+- load 
+- updn (Z�hlrichtung, siehe unten).
+- en: Enable f�r den Z�hler.
+- Ausgang: cnt (Z�hlerstand).
+Funktionalit�t: 
+- Parallel load: Wenn "load==1" --> cnt = data_in. 
+- Z�hlrichtung: Wenn "updn==0" --> aufw�rts, sonst abw�rts. 
+- Enable: Wenn "en==1" --> Z�hler z�hlt, sonst Z�hler steht. 
+
+Erstellen Sie dazu eine Testbench "tb_count_1596" (5 Punkte).
+- Power on reset.
+- Erzeugen eines Clock Signals mit der oben angef�hrten Frequenz.
+- Zeigen Sie die einstellbare Z�hlrichtung.
+- Zeigen Sie die enable Funktion.
+- Zeigen Sie die parallel load Funktion.
+- Im Wave Fenster sollen alle Signal des Moduls count_1596 dargestellt sein.
+
+Erstellen Sie ein TCL Skript mit dessen Hilfe der gesamte Kompilier, Simulations- und Ausgabeprozess gesteuert wird (3 Punkte).
+
+
+--------------------------------------------------
+Aufgabe 3 � Finite State Machine
+--------------------------------------------------
+
+Es ist eine Steuerung f�r ein Rolltor zu erstellen: 
+Eing�nge : 
+- Active low reset.
+- Clock mit aktiver Flanke = posedge. Frequenz = 2 MHz. 
+- key_up --> Wenn dieser Taster == 1 wird, soll sich das Garagentor �ffnen. Dies gilt f�r den geschlossenen Zustand und w�hrend des Schlie�ens.
+- key_down --> Wenn dieser Taster == 1 wird, soll sich das Garagentor schlie�en. Dies gilt f�r den offenen Zustand und w�hrend des �ffnens.
+- sense_up --> Dieser Sensor zeigt an, dass das Rolltor seine obere Endposition erreicht hat --> Das Tor ist offen.
+- sense_down --> Dieser Sensor zeigt an, dass das Rolltor seine untere Endposition erreicht hat --> Das Tor ist geschlossen.
+Ausg�nge (Einrichtungen die gesteuert werden m�ssen): 
+- ml = 1 --> Motor is aktiv, dreht links und das Tor schlie�t sich.
+- mr = 1 --> Motor is aktiv, dreht links und das Tor �ffnet sich.
+- Werden ml und mr = 0 gesetzt, so steht der Motor und das Tor bewegt sich nicht.
+- Werden ml und mr = 1 gesetzt, so wird der Motor zerst�rt.
+- light_red = 1 --> Rote Ampel leuchtet. Dies soll w�hrend aller Torbewegungen und im geschlossenen Zustand erfolgen.
+- light_green = 1 --> Gr�ne Ampel leuchtet. Dies soll nur bei offenen Tor erfolgen.
+
+Erstellen Sie ein SystemVerilog Module "fsm_door_1596" welches die Steuerung gem�� obiger Beschreibung implementiert (15 Punkte):
+- Legen Sie die n�tigen States fest und verwenden Sie einen "enum" Datentyp mit sprechenden State-Namen.
+- Implementieren Sie die sequentielle und kombinatorische Logik die f�r die Steuerung n�tig ist (State-�berg�nge, Ausg�nge).
+
+Erstellen Sie dazu eine Testbench "tb_fsm_door_1596" (4 Punkte).
+- Power on reset.
+- Erzeugen eines Clock Signals mit der oben angef�hrten Frequenz.
+- Zeigen Sie das �ffnen und Schlie�en des Tor.
+- Zeigen Sie das alle Ausg�nge richtig angesteuert werden.
+
+- Im Wave Fenster sollen alle Signale des Modules "fsm_door_1596 dargestellt sein.
+
+Erstellen Sie ein TCL Skript mit dessen Hilfe der gesamte Kompilier, Simulations- und Ausgabeprozess gesteuert wird (1 Punkt).
+
+
